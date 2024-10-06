@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "fastapi-dev": "pip3 install -r requirements.txt && python3 -m uvicorn api.index:app --reload",
+    "fastapi-local": "python -m uvicorn api.index:app --reload",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -10,14 +12,15 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.447.0",
-    "next": "14.2.14",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^14.2.14",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },
