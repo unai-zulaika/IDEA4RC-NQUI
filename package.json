@@ -5,7 +5,8 @@
   "scripts": {
     "fastapi-dev": "python3 -m pip install -e ./IDEA4RC-term && python3 -m pip install -r requirements.txt && python3 -m uvicorn api.index:app --reload",
     "fastapi-local": "python -m uvicorn api.index:app --reload",
-    "dev": "next dev",
+    "next-dev": "next dev",
+    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -23,6 +24,7 @@
     "@tanstack/react-table": "^8.20.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "concurrently": "^9.0.1",
     "lucide-react": "^0.447.0",
     "next": "^14.2.14",
     "react": "^18.3.1",
