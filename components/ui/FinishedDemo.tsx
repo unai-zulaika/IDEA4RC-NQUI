@@ -21,7 +21,7 @@ type FinishedDemoProps = {
 };
 
 export function FinishedDemo({ isEverythingChecked, onClick }: FinishedDemoProps) {
-    const textToCopy = "https://ui.shadcn.com/docs/installation";
+    const textToCopy = "https://forms.gle/5XZVWR2yCKvijePj9";
     return (
         <Dialog>
             <DialogTrigger asChild>
