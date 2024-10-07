@@ -18,7 +18,6 @@ export default function Home() {
         />
         <Textarea placeholder="Write in words your cohort criteria. For instance: Retrieve all patient id for those patient diagnosed with a angiomyxoma or carcinoma" />
         {/* <InputWithButton /> */}
-
         <div>
           <div className="space-y-2">
             <h4 className="text-xl font-medium leading-none">Examples</h4>
@@ -29,8 +28,11 @@ export default function Home() {
             </p>
             <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
-              Retrieve all patient id for those patient diagnosed with a
-              angiomyxoma or carcinoma
+              Retrieve all patient id for patients diagnosed with primary retroperitoneal sarcoma, between 2010-2014
+            </p>
+            <Separator className="my-4" />
+            <p className="text-sm text-muted-foreground">
+              Retrieve all patient id for patients with head and neck cancers with at least 1st progression and any treatment of first progression
             </p>
           </div>
         </div>
