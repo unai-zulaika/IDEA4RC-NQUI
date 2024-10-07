@@ -1,0 +1,3284 @@
+{
+    "8507": {
+        "variable_name": "Sex",
+        "term": "Male",
+        "description": "Describes biological sex as recorded in the patient's identity document or in the hospital record. In the absence of documentation, the one declared by the patient will be recorded",
+        "entity": "Patient"
+    },
+    "8532": {
+        "variable_name": "Sex",
+        "term": "Female",
+        "description": "Describes biological sex as recorded in the patient's identity document or in the hospital record. In the absence of documentation, the one declared by the patient will be recorded",
+        "entity": "Patient"
+    },
+    "8527": {
+        "variable_name": "Race",
+        "term": "White",
+        "description": "Describes race as recorded in  the hospital record, the one declared by the patient,, otherwise, the onerecognized by the observer",
+        "entity": "Patient"
+    },
+    "8516": {
+        "variable_name": "Race",
+        "term": "Black",
+        "description": "Describes race as recorded in  the hospital record, the one declared by the patient,, otherwise, the onerecognized by the observer",
+        "entity": "Patient"
+    },
+    "8515": {
+        "variable_name": "Race",
+        "term": "Asian/Pacific Islanders",
+        "description": "Describes race as recorded in  the hospital record, the one declared by the patient,, otherwise, the onerecognized by the observer",
+        "entity": "Patient"
+    },
+    "8657": {
+        "variable_name": "Race",
+        "term": "American Indian/Alaska Native",
+        "description": "Describes race as recorded in  the hospital record, the one declared by the patient,, otherwise, the onerecognized by the observer",
+        "entity": "Patient"
+    },
+    "36309332": {
+        "variable_name": "Smoking",
+        "term": "Current smoker",
+        "description": "Describes tobacco smoker habits within the options proposed",
+        "entity": "Patient"
+    },
+    "45883458": {
+        "variable_name": "Smoking",
+        "term": "Former smoker",
+        "description": "Describes tobacco smoker habits within the options proposed",
+        "entity": "Patient"
+    },
+    "45879404": {
+        "variable_name": "Smoking",
+        "term": "Never smoker",
+        "description": "Describes tobacco smoker habits within the options proposed",
+        "entity": "Patient"
+    },
+    "4074035": {
+        "variable_name": "Alcohol",
+        "term": "Current drinker",
+        "description": "Describes alcohol habits within the options proposed",
+        "entity": "Patient"
+    },
+    "4188539": {
+        "variable_name": "IGRT  (image guide radiotherapy)",
+        "term": "Yes",
+        "description": "Refers to whether image guided radiotherapy was used for delivery of radiotherapy and to check the patient set up. This includes MV, KV, or Cone Beam CT imaging.",
+        "entity": "Radiotherapy"
+    },
+    "36303470": {
+        "variable_name": "ECOG PS label",
+        "term": "Answers of ECOG Performance Status [Interpretation]",
+        "description": "Eastern Cooperative Oncology Group performance status (ECOG PS)  at diagnosis",
+        "entity": "Patient"
+    },
+    "36303744": {
+        "variable_name": "Karnofsy index label",
+        "term": "Answers of Karnofsky Performance Status [Interpretation]",
+        "description": "Karnofsy index at diagnosis",
+        "entity": "Patient"
+    },
+    "4211787": {
+        "variable_name": "No Genetic syndrome WHO 2020 ",
+        "term": "No evidence of",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4145177": {
+        "variable_name": "Olliers disease",
+        "term": "Enchondromatosis",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4187683": {
+        "variable_name": "Maffuci syndrome",
+        "term": "Maffucci syndrome",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "37117262": {
+        "variable_name": "McCune-Albright syndrome",
+        "term": "McCune Albright syndrome",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "37396802": {
+        "variable_name": "Multiple osteochondromas",
+        "term": "Multiple osteochondroma",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "377252": {
+        "variable_name": "Neurofibromatosis type 1",
+        "term": "Neurofibromatosis type 1",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4197821": {
+        "variable_name": "Werner syndrome",
+        "term": "Werner syndrome",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4158977": {
+        "variable_name": "Retinoblastoma",
+        "term": "Retinoblastoma",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "75910": {
+        "variable_name": "Paget disease",
+        "term": "Osteitis deformans",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "1340204": {
+        "variable_name": "Other Genetic syndrome WHO 2020 ",
+        "term": "History of event",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4266186": {
+        "variable_name": "Occurrence of other cancer",
+        "term": "Children (and subchildren) of Neoplasm and/or hamartoma",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4273629": {
+        "variable_name": "type of systemic treatment",
+        "term": "Chemotherapy",
+        "description": "Select the type of systemic treatment administered. It is possible to directly select the single treatment as appropriate.",
+        "entity": "SystemicTreatment"
+    },
+    "42535584": {
+        "variable_name": "Previous cancer treatment",
+        "term": "Comprehensive medication therapy review",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4295112": {
+        "variable_name": "Previous cancer treatment",
+        "term": "Immunological therapy",
+        "description": NaN,
+        "entity": "Patient"
+    },
+    "4171863": {
+        "variable_name": "Type of biopsy",
+        "term": "Fine needle biopsy",
+        "description": "Type of biopsy performed to the patient",
+        "entity": "Diagnosis"
+    },
+    "4321878": {
+        "variable_name": "Type of biopsy",
+        "term": "Core needle biopsy",
+        "description": "Type of biopsy performed to the patient",
+        "entity": "Diagnosis"
+    },
+    "4321986": {
+        "variable_name": "Type of biopsy",
+        "term": "Incisional biopsy",
+        "description": "Type of biopsy performed to the patient",
+        "entity": "Diagnosis"
+    },
+    "4228202": {
+        "variable_name": "Type of biopsy",
+        "term": "Excisional biopsy",
+        "description": "Type of biopsy performed to the patient",
+        "entity": "Diagnosis"
+    },
+    "4279903": {
+        "variable_name": "Type of biopsy",
+        "term": "Excision",
+        "description": "Type of biopsy performed to the patient",
+        "entity": "Diagnosis"
+    },
+    "37117814": {
+        "variable_name": "Radiotherapy induced sarcoma",
+        "term": "Radiation therapy induced change",
+        "description": "radiotherapy induced if the new tumour is in the field or marginal  the anatomical area that received high radiation dose; please specify the interval time from the radiotherapy treatment",
+        "entity": "Diagnosis"
+    },
+    "4078953": {
+        "variable_name": "Histology",
+        "term": "Squamous cell carcinoma, keratinizing",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4206785": {
+        "variable_name": "Histology",
+        "term": "Schneiderian carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4009590": {
+        "variable_name": "Histology",
+        "term": "Squamous cell carcinoma, spindle cell",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4247661": {
+        "variable_name": "Histology",
+        "term": "Lymphoepithelial carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029973": {
+        "variable_name": "Histology",
+        "term": "Basaloid squamous cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37156145": {
+        "variable_name": "Histology",
+        "term": "Squamous cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4312219": {
+        "variable_name": "Histology",
+        "term": "Adenoid squamous cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4052146": {
+        "variable_name": "Histology",
+        "term": "Squamous cell carcinoma, microinvasive",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4175678": {
+        "variable_name": "Histology",
+        "term": "Giant cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4233949": {
+        "variable_name": "Histology",
+        "term": "Verrucous carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4191609": {
+        "variable_name": "Histology",
+        "term": "Papillary squamous cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37204531": {
+        "variable_name": "Histology",
+        "term": "Human papillomavirus positive squamous cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4097305": {
+        "variable_name": "Histology",
+        "term": "Adenocarcinoma, intestinal type",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37152526": {
+        "variable_name": "Histology",
+        "term": "Adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4050978": {
+        "variable_name": "Histology",
+        "term": "Cystadenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4247921": {
+        "variable_name": "Histology",
+        "term": "Mucinous adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4238334": {
+        "variable_name": "Histology",
+        "term": "Ceruminous adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4172953": {
+        "variable_name": "Histology",
+        "term": "Papillary adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4022895": {
+        "variable_name": "Histology",
+        "term": "Adenoid cystic carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4253608": {
+        "variable_name": "Histology",
+        "term": "Mucoepidermoid carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4030121": {
+        "variable_name": "Histology",
+        "term": "Polymorphous low grade adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4164740": {
+        "variable_name": "Histology",
+        "term": "Acinar cell carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4148292": {
+        "variable_name": "Histology",
+        "term": "Clear cell adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4146684": {
+        "variable_name": "Histology",
+        "term": "Basal cell adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4221403": {
+        "variable_name": "Histology",
+        "term": "Infiltrating duct carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4224593": {
+        "variable_name": "Histology",
+        "term": "Juvenile carcinoma of the breast",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4323699": {
+        "variable_name": "Histology",
+        "term": "Paget's disease, extramammary (except Paget's disease of bone)",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029680": {
+        "variable_name": "Histology",
+        "term": "Myoepithelial carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4066512": {
+        "variable_name": "Histology",
+        "term": "Carcinoma ex pleomorphic adenoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4182993": {
+        "variable_name": "Histology",
+        "term": "Sebaceous adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4271564": {
+        "variable_name": "Histology",
+        "term": "Carcinosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4212379": {
+        "variable_name": "Histology",
+        "term": "Oxyphilic adenocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "36714029": {
+        "variable_name": "Histology",
+        "term": "Small cell neuroendocrine\u00a0carcinoma (SmCC)\u200b",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37018672": {
+        "variable_name": "Histology",
+        "term": "Malignant poorly differentiated neuroendocrine carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029971": {
+        "variable_name": "Histology",
+        "term": "Large cell neuroendocrine carcinoma (LCNEC)\u200b",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4133828": {
+        "variable_name": "Histology",
+        "term": "Neuroendocrine tumor grade 1",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4133297": {
+        "variable_name": "Histology",
+        "term": "Neuroendocrine tumor grade 2",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4098585": {
+        "variable_name": "Histology",
+        "term": "Odontogenic tumor, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37116966": {
+        "variable_name": "Histology",
+        "term": "Clear cell odontogenic carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4243327": {
+        "variable_name": "Histology",
+        "term": "Carcinoma, undifferentiated",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4241843": {
+        "variable_name": "Histology",
+        "term": "Adenosquamous carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4284401": {
+        "variable_name": "Histology",
+        "term": "Teratocarcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37116896": {
+        "variable_name": "Histology",
+        "term": "Nuclear protein in testis associated carcinoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4295574": {
+        "variable_name": "Histology",
+        "term": "Olfactory neuroblastoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4021372": {
+        "variable_name": "Histology",
+        "term": "Atypical lipomatous tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4102790": {
+        "variable_name": "Histology",
+        "term": "Liposarcoma, well differentiated",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4284833": {
+        "variable_name": "Histology",
+        "term": "Dedifferentiated liposarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4101123": {
+        "variable_name": "Histology",
+        "term": "Myxoid liposarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4010104": {
+        "variable_name": "Histology",
+        "term": "Pleomorphic liposarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4264204": {
+        "variable_name": "Histology",
+        "term": "Aggressive fibromatosis",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766468": {
+        "variable_name": "Histology",
+        "term": "Lipofibromatosis",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4030132": {
+        "variable_name": "Histology",
+        "term": "Giant cell fibroblastoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4295283": {
+        "variable_name": "Histology",
+        "term": "Dermatofibrosarcoma protuberans",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37116995": {
+        "variable_name": "Histology",
+        "term": "Solitary fibrous tumor and hemangiopericytoma grade 1",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37116996": {
+        "variable_name": "Histology",
+        "term": "Solitary fibrous tumor and hemangiopericytoma grade 2",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37116997": {
+        "variable_name": "Histology",
+        "term": "Solitary fibrous tumor and hemangiopericytoma grade 3",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4021373": {
+        "variable_name": "Histology",
+        "term": "Myofibroblastic tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029679": {
+        "variable_name": "Histology",
+        "term": "Cellular fibroma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766450": {
+        "variable_name": "Histology",
+        "term": "Myxoinflammatory fibroblastic sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4202374": {
+        "variable_name": "Histology",
+        "term": "Fibrosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45771359": {
+        "variable_name": "Histology",
+        "term": "Myxofibrosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766456": {
+        "variable_name": "Histology",
+        "term": "Sclerosing epithelioid fibrosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029525": {
+        "variable_name": "Histology",
+        "term": "Plexiform fibrohistiocytic tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4218898": {
+        "variable_name": "Histology",
+        "term": "Giant cell tumour of soft parts",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4030140": {
+        "variable_name": "Histology",
+        "term": "Tenosynovial giant cell tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766525": {
+        "variable_name": "Histology",
+        "term": "Tenosynovial giant cell tumor, diffuse",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029655": {
+        "variable_name": "Histology",
+        "term": "Malignant tenosynovial giant cell tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4207381": {
+        "variable_name": "Histology",
+        "term": "Epithelioid haemangioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "3661612": {
+        "variable_name": "Histology",
+        "term": "Angiosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4281384": {
+        "variable_name": "Histology",
+        "term": "Hemangioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4030139": {
+        "variable_name": "Histology",
+        "term": "Spindle cell hemangioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766493": {
+        "variable_name": "Histology",
+        "term": "Retiform haemangioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4030138": {
+        "variable_name": "Histology",
+        "term": "Papillary intralymphatic angioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766494": {
+        "variable_name": "Histology",
+        "term": "Composite haemangioendothelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4014760": {
+        "variable_name": "Histology",
+        "term": "Glomus tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4028856": {
+        "variable_name": "Histology",
+        "term": "Glomus tumor, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4327493": {
+        "variable_name": "Histology",
+        "term": "Smooth muscle tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "607803": {
+        "variable_name": "Histology",
+        "term": "Epithelioid smooth muscle tumor of uncertain malignant potential",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "600675": {
+        "variable_name": "Histology",
+        "term": "Myxoid smooth muscle tumour of uncertain mailgnant potential",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029023": {
+        "variable_name": "Histology",
+        "term": "Metastasizing leiomyoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37151903": {
+        "variable_name": "Histology",
+        "term": "Leiomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4173148": {
+        "variable_name": "Histology",
+        "term": "Epithelioid  leiomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4059632": {
+        "variable_name": "Histology",
+        "term": "Myxoid leiomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4031038": {
+        "variable_name": "Histology",
+        "term": "Embryonal rhabdomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4272931": {
+        "variable_name": "Histology",
+        "term": "Alveolar rhabdomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4298312": {
+        "variable_name": "Histology",
+        "term": "Pleomorphic rhabdomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029528": {
+        "variable_name": "Histology",
+        "term": "Spindle cell rhabdomyosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029024": {
+        "variable_name": "Histology",
+        "term": "Ectomesenchymoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4298240": {
+        "variable_name": "Histology",
+        "term": "Extraskeletal osteosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4062426": {
+        "variable_name": "Histology",
+        "term": "Malignant peripheral nerve sheath tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4102399": {
+        "variable_name": "Histology",
+        "term": "Melanotic malignant peripheral nerve sheath tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4005360": {
+        "variable_name": "Histology",
+        "term": "Granular cell tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4027842": {
+        "variable_name": "Histology",
+        "term": "Granular cell tumour, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4096931": {
+        "variable_name": "Histology",
+        "term": "Atypical fibrous histiocytoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029526": {
+        "variable_name": "Histology",
+        "term": "Angiomatoid fibrous histiocytoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766448": {
+        "variable_name": "Histology",
+        "term": "Pleomorphic hyalinizing angiectatic tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "1243125": {
+        "variable_name": "Histology",
+        "term": "Hemosiderotic fibrolipomatous tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4268491": {
+        "variable_name": "Histology",
+        "term": "Synovial sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4244886": {
+        "variable_name": "Histology",
+        "term": "Epithelioid sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4339208": {
+        "variable_name": "Histology",
+        "term": "Alveolar soft part sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4155072": {
+        "variable_name": "Histology",
+        "term": "Clear cell sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4297345": {
+        "variable_name": "Histology",
+        "term": "Extraskeletal myxoid chondrosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029522": {
+        "variable_name": "Histology",
+        "term": "Desmoplastic small round cell tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4299132": {
+        "variable_name": "Histology",
+        "term": "Extrarenal rhabdoid tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45771358": {
+        "variable_name": "Histology",
+        "term": "Perivascular epithelioid tumor, benign",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766447": {
+        "variable_name": "Histology",
+        "term": "Perivascular epithelioid tumor, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4304780": {
+        "variable_name": "Histology",
+        "term": "Perivascular epithelioid cell tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766495": {
+        "variable_name": "Histology",
+        "term": "Intimal sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029021": {
+        "variable_name": "Histology",
+        "term": "Undifferentiated sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4239519": {
+        "variable_name": "Histology",
+        "term": "Myoepithelioma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4028565": {
+        "variable_name": "Histology",
+        "term": "Ossifying fibromyxoid tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766467": {
+        "variable_name": "Histology",
+        "term": "Ossifying fibromyxoid tumor, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4195947": {
+        "variable_name": "Histology",
+        "term": "Mesenchymoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766484": {
+        "variable_name": "Histology",
+        "term": "Phosphaturic mesenchymal tumor, benign",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766485": {
+        "variable_name": "Histology",
+        "term": "Phosphaturic mesenchymal tumour, malignant",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4239956": {
+        "variable_name": "Histology",
+        "term": "Angiomyxoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45766528": {
+        "variable_name": "Histology",
+        "term": "Ewing sarcoma / peripheral neuroectodermal tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37152440": {
+        "variable_name": "Histology",
+        "term": "Sarcoma with\u00a0BCOR\u00a0genetic alterations",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4290926": {
+        "variable_name": "Histology",
+        "term": "Endometrial stromal sarcoma, high grade",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4028557": {
+        "variable_name": "Histology",
+        "term": "Endometrial stromal sarcoma, low grade",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "45771357": {
+        "variable_name": "Histology",
+        "term": "Uterine tumour resembling ovarian sex cord tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4040991": {
+        "variable_name": "Histology",
+        "term": "Benign phyllodes tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4323562": {
+        "variable_name": "Histology",
+        "term": "Borderline phyllodes tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4337106": {
+        "variable_name": "Histology",
+        "term": "Malignant phyllodes tumor",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4028710": {
+        "variable_name": "Histology",
+        "term": "Follicular dendritic cell sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029172": {
+        "variable_name": "Histology",
+        "term": "Histiocytic sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4028709": {
+        "variable_name": "Histology",
+        "term": "Interdigitating dendritic cell sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4029173": {
+        "variable_name": "Histology",
+        "term": "Langherans cell sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "42872917": {
+        "variable_name": "Histology",
+        "term": "Fibroblastic reticular cell tumour",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "37311513": {
+        "variable_name": "Histology",
+        "term": "Biphenotypic sinonasal sarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4135215": {
+        "variable_name": "Histology",
+        "term": "Adenosarcoma",
+        "description": "Histology value for the cancer diagnosis.",
+        "entity": "Diagnosis"
+    },
+    "4088327": {
+        "variable_name": "Topography",
+        "term": "Nasal cavity structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4050631": {
+        "variable_name": "Topography",
+        "term": "Maxillary sinus structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4182234": {
+        "variable_name": "Topography",
+        "term": "Ethmoid sinus structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4204534": {
+        "variable_name": "Topography",
+        "term": "Frontal sinus structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4097172": {
+        "variable_name": "Topography",
+        "term": "Sphenoid sinus structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4068978": {
+        "variable_name": "Topography",
+        "term": "Structure of superior wall of nasopharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4146741": {
+        "variable_name": "Topography",
+        "term": "Structure of posterior wall of nasopharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4323979": {
+        "variable_name": "Topography",
+        "term": "Structure of lateral wall of nasopharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4220236": {
+        "variable_name": "Topography",
+        "term": "Structure of anterior wall of nasopharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4147741": {
+        "variable_name": "Topography",
+        "term": "Structure of postcricoid region",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4262980": {
+        "variable_name": "Topography",
+        "term": "Structure of hypopharyngeal aspect of aryepiglottic fold",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4102600": {
+        "variable_name": "Topography",
+        "term": "Structure of posterior wall of hypopharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4268741": {
+        "variable_name": "Topography",
+        "term": "Structure of piriform recess",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4166063": {
+        "variable_name": "Topography",
+        "term": "Parotid gland structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4299196": {
+        "variable_name": "Topography",
+        "term": "Submandibular salivary gland structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4229131": {
+        "variable_name": "Topography",
+        "term": "Sublingual gland structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4100253": {
+        "variable_name": "Topography",
+        "term": "Middle ear structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4169910": {
+        "variable_name": "Topography",
+        "term": "Structure of root of tongue",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4177005": {
+        "variable_name": "Topography",
+        "term": "Soft palate structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4095284": {
+        "variable_name": "Topography",
+        "term": "Uvula palatina structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4138234": {
+        "variable_name": "Topography",
+        "term": "Tonsillar fossa structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4068841": {
+        "variable_name": "Topography",
+        "term": "Lingual tonsil structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4065073": {
+        "variable_name": "Topography",
+        "term": "Palatine arch structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4173123": {
+        "variable_name": "Topography",
+        "term": "Structure of vallecula of epiglottis",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4283238": {
+        "variable_name": "Topography",
+        "term": "Structure of anterior surface of epiglottis",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4078066": {
+        "variable_name": "Topography",
+        "term": "Structure of lateral wall of oropharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4045435": {
+        "variable_name": "Topography",
+        "term": "Structure of posterior wall of oropharynx",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4235649": {
+        "variable_name": "Topography",
+        "term": "Embryonic branchial cleft",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4327174": {
+        "variable_name": "Topography",
+        "term": "Palatine tonsillar structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4047227": {
+        "variable_name": "Topography",
+        "term": "Glottis structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4001049": {
+        "variable_name": "Topography",
+        "term": "Supraglottis structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4002724": {
+        "variable_name": "Topography",
+        "term": "Subglottis structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4279711": {
+        "variable_name": "Topography",
+        "term": "Laryngeal cartilage structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4284551": {
+        "variable_name": "Topography",
+        "term": "Structure of dorsum of tongue",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4077986": {
+        "variable_name": "Topography",
+        "term": "Structure of border of tongue",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4172794": {
+        "variable_name": "Topography",
+        "term": "Structure of inferior surface of tongue",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "44498031": {
+        "variable_name": "Topography",
+        "term": "Overlapping lesion of tongue",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4047029": {
+        "variable_name": "Topography",
+        "term": "Structure of gum of maxilla",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4210919": {
+        "variable_name": "Topography",
+        "term": "Structure of gum of mandible",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4181419": {
+        "variable_name": "Topography",
+        "term": "Structure of anterior floor of mouth",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4103066": {
+        "variable_name": "Topography",
+        "term": "Structure of lateral floor of mouth",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "44498040": {
+        "variable_name": "Topography",
+        "term": "Overlapping lesion of floor of mouth",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4234542": {
+        "variable_name": "Topography",
+        "term": "Hard palate structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4057160": {
+        "variable_name": "Topography",
+        "term": "Buccal mucosa",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4144069": {
+        "variable_name": "Topography",
+        "term": "Structure of vestibule of mouth",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4312102": {
+        "variable_name": "Topography",
+        "term": "Structure of retromolar area of mouth",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4134589": {
+        "variable_name": "Topography",
+        "term": "Structure of vermilion border of upper lip",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4027546": {
+        "variable_name": "Topography",
+        "term": "Structure of vermilion border of lower lip",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4027545": {
+        "variable_name": "Topography",
+        "term": "Structure of vermilion border of lip",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4086480": {
+        "variable_name": "Topography",
+        "term": "Structure of mucous membrane of upper lip",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4245168": {
+        "variable_name": "Topography",
+        "term": "Structure of mucous membrane of lip",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4307358": {
+        "variable_name": "Topography",
+        "term": "Commissure of lips",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4310976": {
+        "variable_name": "Topography",
+        "term": "Hand structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4220073": {
+        "variable_name": "Topography",
+        "term": "Wrist region structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4032953": {
+        "variable_name": "Topography",
+        "term": "Forearm structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4027910": {
+        "variable_name": "Topography",
+        "term": "Elbow region structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4348994": {
+        "variable_name": "Topography",
+        "term": "Antecubital fossa (surface region)",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4165266": {
+        "variable_name": "Topography",
+        "term": "Upper arm structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4142359": {
+        "variable_name": "Topography",
+        "term": "Ankle region structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4107527": {
+        "variable_name": "Topography",
+        "term": "Lower leg structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4217806": {
+        "variable_name": "Topography",
+        "term": "Knee region structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4138531": {
+        "variable_name": "Topography",
+        "term": "popliteal fossa structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4090445": {
+        "variable_name": "Topography",
+        "term": "Upper leg",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4291935": {
+        "variable_name": "Topography",
+        "term": "Deltoid",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4088464": {
+        "variable_name": "Topography",
+        "term": "Supraclavicular",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4136969": {
+        "variable_name": "Topography",
+        "term": "Trapezius",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4263335": {
+        "variable_name": "Topography",
+        "term": "Buttock",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4096078": {
+        "variable_name": "Topography",
+        "term": "Pectoral",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4157836": {
+        "variable_name": "Topography",
+        "term": "Axilla",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4088614": {
+        "variable_name": "Topography",
+        "term": "Joint structure of thoracic wall",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4244412": {
+        "variable_name": "Topography",
+        "term": "Anterior abdominal wall structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4330865": {
+        "variable_name": "Topography",
+        "term": "Posterior abdominal wall structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4348976": {
+        "variable_name": "Topography",
+        "term": "Paravertebral region",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4289613": {
+        "variable_name": "Topography",
+        "term": "Structure of thoracolumbar region of back",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "606482": {
+        "variable_name": "Topography",
+        "term": "Structure of thoracolumbar junction of vertebral column",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4046743": {
+        "variable_name": "Topography",
+        "term": "Structure of cervical vertebral column",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4075118": {
+        "variable_name": "Topography",
+        "term": "Retroperitoneal fascia",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4271699": {
+        "variable_name": "Topography",
+        "term": "Inferior vena cava structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4193451": {
+        "variable_name": "Topography",
+        "term": "Iliac vessel",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4004831": {
+        "variable_name": "Topography",
+        "term": "Aorta and aorta, CS",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4154880": {
+        "variable_name": "Topography",
+        "term": "Structure of renal artery",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4157844": {
+        "variable_name": "Topography",
+        "term": "Gonadal artery",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4314264": {
+        "variable_name": "Topography",
+        "term": "Structure of mesenteric artery",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4044034": {
+        "variable_name": "Topography",
+        "term": "Pelvic region",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4075991": {
+        "variable_name": "Topography",
+        "term": "Region of esophagus",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4288283": {
+        "variable_name": "Topography",
+        "term": "Stomach structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4302112": {
+        "variable_name": "Topography",
+        "term": "Duodenal structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4065077": {
+        "variable_name": "Topography",
+        "term": "Jejunal structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4316356": {
+        "variable_name": "Topography",
+        "term": "Stricture of ileum",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4215634": {
+        "variable_name": "Topography",
+        "term": "Colon structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4144541": {
+        "variable_name": "Topography",
+        "term": "Rectum structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4233095": {
+        "variable_name": "Topography",
+        "term": "Mesentery",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4213162": {
+        "variable_name": "Topography",
+        "term": "Lung structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4217142": {
+        "variable_name": "Topography",
+        "term": "Heart structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4150673": {
+        "variable_name": "Topography",
+        "term": "Pleura structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4088610": {
+        "variable_name": "Topography",
+        "term": "Region of mediastinum",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4167648": {
+        "variable_name": "Topography",
+        "term": "Superior vena cava structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4035327": {
+        "variable_name": "Topography",
+        "term": "Stricture of pulmonary vessel",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4272388": {
+        "variable_name": "Topography",
+        "term": "Structure of subclavian artery",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4051774": {
+        "variable_name": "Topography",
+        "term": "Adrenal structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4271678": {
+        "variable_name": "Topography",
+        "term": "Kidney structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4078617": {
+        "variable_name": "Topography",
+        "term": "Region of ureter",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4232481": {
+        "variable_name": "Topography",
+        "term": "Urinary bladder structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4165732": {
+        "variable_name": "Topography",
+        "term": "Prostatic structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4277442": {
+        "variable_name": "Topography",
+        "term": "Seminal Vescicle structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4172591": {
+        "variable_name": "Topography",
+        "term": "Spermatic Cord structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4238088": {
+        "variable_name": "Topography",
+        "term": "Testis structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4149192": {
+        "variable_name": "Topography",
+        "term": "Uterine structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4049448": {
+        "variable_name": "Topography",
+        "term": "Ovarian structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4151444": {
+        "variable_name": "Topography",
+        "term": "Fallopian tube structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4296022": {
+        "variable_name": "Topography",
+        "term": "Vaginal structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4166066": {
+        "variable_name": "Topography",
+        "term": "Vulval structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4122633": {
+        "variable_name": "Topography",
+        "term": "Face and/or neck structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "4298444": {
+        "variable_name": "Topography",
+        "term": "Breast structure",
+        "description": "Topography value for the cancer diagnosis",
+        "entity": "Diagnosis"
+    },
+    "9191": {
+        "variable_name": "CRP \u2013 C reactive protein tested ",
+        "term": "Positive",
+        "description": "Describes the result of C reactive protein testing",
+        "entity": "Diagnosis"
+    },
+    "9189": {
+        "variable_name": "CRP \u2013 C reactive protein tested ",
+        "term": "Negative",
+        "description": "Describes the result of C reactive protein testing",
+        "entity": "Diagnosis"
+    },
+    "45878602": {
+        "variable_name": "CRP \u2013 C reactive protein tested ",
+        "term": "not tested",
+        "description": "Describes the result of C reactive protein testing",
+        "entity": "Diagnosis"
+    },
+    "32946": {
+        "variable_name": "Treatment response (based on imaging alone; no recist or other criteria)",
+        "term": "Complete Remission",
+        "description": "It refers to the response to the entire therapy administered to the patient. It measures how well a cancer patient responds to treatment. RECIST criteria should not be applied. The definition of Complete response; Partial response; Stable disease; Progression, should be based on the clinical judgement based on imaging.",
+        "entity": "TreatmentResponse"
+    },
+    "32947": {
+        "variable_name": "Treatment response (based on imaging alone; no recist or other criteria)",
+        "term": "Partial Remission",
+        "description": "It refers to the response to the entire therapy administered to the patient. It measures how well a cancer patient responds to treatment. RECIST criteria should not be applied. The definition of Complete response; Partial response; Stable disease; Progression, should be based on the clinical judgement based on imaging.",
+        "entity": "TreatmentResponse"
+    },
+    "32949": {
+        "variable_name": "Treatment response (based on imaging alone; no recist or other criteria)",
+        "term": "Progression",
+        "description": "It refers to the response to the entire therapy administered to the patient. It measures how well a cancer patient responds to treatment. RECIST criteria should not be applied. The definition of Complete response; Partial response; Stable disease; Progression, should be based on the clinical judgement based on imaging.",
+        "entity": "TreatmentResponse"
+    },
+    "32948": {
+        "variable_name": "Treatment response (based on imaging alone; no recist or other criteria)",
+        "term": "Stable Disease",
+        "description": "It refers to the response to the entire therapy administered to the patient. It measures how well a cancer patient responds to treatment. RECIST criteria should not be applied. The definition of Complete response; Partial response; Stable disease; Progression, should be based on the clinical judgement based on imaging.",
+        "entity": "TreatmentResponse"
+    },
+    "1635299": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634269": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633589": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635857": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635227": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633737": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635656": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633815": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635794": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634381": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635664": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633883": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633747": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634029": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634651": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633877": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633324": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635556": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635522": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635530": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634973": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634247": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634522": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634963": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634624": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 6th clinical T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634120": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 7th clinical T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634854": {
+        "variable_name": "cT",
+        "term": "AJCC/UICC 8th clinical T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635104": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633679": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634797": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633315": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633942": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634070": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635697": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634139": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633651": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635470": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635634": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633763": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634143": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635739": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633788": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633433": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635677": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633323": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634678": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634727": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633271": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635605": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634037": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633854": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633434": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635004": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635496": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635283": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 6th clinical N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635084": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 7th clinical N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635828": {
+        "variable_name": "cN",
+        "term": "AJCC/UICC 8th clinical N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634194": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 6th clinical M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1633468": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 7th clinical M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1634757": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 8th clinical M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1634829": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 6th clinical M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1633276": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 7th clinical M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1633974": {
+        "variable_name": "cM",
+        "term": "AJCC/UICC 8th clinical M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1634270": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635402": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634986": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological TX Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635660": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633798": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634720": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th Tis Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633279": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634675": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634635": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T0 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633445": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635422": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635070": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T1 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634792": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634491": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633307": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T2 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635670": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634658": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634386": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T3 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635311": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635341": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635396": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T4 Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634101": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633723": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1634894": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T4a Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633900": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 6th pathological T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633699": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 7th pathological T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1633658": {
+        "variable_name": "pT",
+        "term": "AJCC/UICC 8th pathological T4b Category",
+        "description": "Specifies the clinical T",
+        "entity": "Stage"
+    },
+    "1635823": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634505": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634117": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological NX Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634212": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633726": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635560": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N0 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634562": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634245": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633659": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N1 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634541": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633569": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633336": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N2 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633273": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635717": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635871": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N2a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634773": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633607": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634645": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N2b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635113": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634601": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634383": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N2c Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634504": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633668": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635307": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N3 Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634271": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634397": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635545": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N3a Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1633500": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 6th pathological N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634847": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 7th pathological N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1634770": {
+        "variable_name": "pN",
+        "term": "AJCC/UICC 8th pathological N3b Category",
+        "description": "Specifies the clinical N",
+        "entity": "Stage"
+    },
+    "1635345": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 6th pathological M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1635536": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 7th pathological M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1634606": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 8th pathological M0 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1633469": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 6th pathological M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1635336": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 7th pathological M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "1634891": {
+        "variable_name": "pM",
+        "term": "AJCC/UICC 8th pathological M1 Category",
+        "description": "Specifies the clinical M",
+        "entity": "Stage"
+    },
+    "36770618": {
+        "variable_name": "Radiological Extra-nodal extension (rEne)",
+        "term": "ENE+",
+        "description": "Describes the presence or absence of radiological signs of extracapsular extension, as defined in the AJCC 8th Ed",
+        "entity": "Stage"
+    },
+    "1635842": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633828": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635824": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633905": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634457": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635758": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634718": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635182": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635217": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635848": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635125": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634596": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634307": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634766": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635029": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635535": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634451": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634810": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633922": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635757": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635708": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633270": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th clinical Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634614": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th clinical Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635006": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th clinical Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634741": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635511": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634787": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 0",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635797": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635800": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634799": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 1",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633751": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634619": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635386": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 2",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633499": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634947": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634705": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 3",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634208": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635230": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1633697": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 4",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634731": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635745": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634005": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 4A",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635370": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634472": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634487": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 4B",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1635893": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 6th pathological Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634492": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 7th pathological Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "1634551": {
+        "variable_name": "Staging classification",
+        "term": "AJCC/UICC 8th pathological Stage 4C",
+        "description": "Specifies the clinical TNM",
+        "entity": "Stage"
+    },
+    "35225724": {
+        "variable_name": "Site of surgery on metastasis_soft tissue",
+        "term": "Metastasis to soft tissues",
+        "description": "Describes if site of surgery on metastasis  is soft tissue",
+        "entity": "Surgery"
+    },
+    "36769243": {
+        "variable_name": "Site of surgery on metastasis_distant lymph nodes",
+        "term": "Distant spread to lymph node",
+        "description": "Describes if site of surgery on metastasis  is dystan lymph node",
+        "entity": "Surgery"
+    },
+    "36770283": {
+        "variable_name": "Site of surgery on metastasis_lung",
+        "term": "Metastasis to lung",
+        "description": "Describes if site of surgery on metastasis  is lung",
+        "entity": "Surgery"
+    },
+    "36769301": {
+        "variable_name": "Site of surgery on metastasis_bone",
+        "term": "Metastasis to bone",
+        "description": "Describes if site of surgery on metastasis  is bone",
+        "entity": "Surgery"
+    },
+    "36770544": {
+        "variable_name": "Site of surgery on metastasis_liver",
+        "term": "Metastasis to liver",
+        "description": "Describes if site of surgery on metastasis  is liver",
+        "entity": "Surgery"
+    },
+    "35226258": {
+        "variable_name": "Site of surgery on metastasis_pleura",
+        "term": "Metastasis to pleura",
+        "description": "Describes if site of surgery on metastasis  is pleura",
+        "entity": "Surgery"
+    },
+    "35226253": {
+        "variable_name": "Site of surgery on metastasis_peritoneum",
+        "term": "Metastasis to peritoneum",
+        "description": "Describes if site of surgery on metastasis  is peritoneum",
+        "entity": "Surgery"
+    },
+    "36768862": {
+        "variable_name": "Site of surgery on metastasis_brain",
+        "term": "Metastasis to brain",
+        "description": "Describes if site of surgery on metastasis  is brain",
+        "entity": "Surgery"
+    },
+    "36769180": {
+        "variable_name": "Site of surgery on metastasis_other viscera",
+        "term": "Metastasis",
+        "description": "Describes if site of surgery on metastasis  is other viscera",
+        "entity": "Surgery"
+    },
+    "4129922": {
+        "variable_name": "Site of surgery on metastasis_unknown",
+        "term": "Unknown",
+        "description": "Describes if site of surgery on metastasis  is unknown",
+        "entity": "Surgery"
+    },
+    "32942": {
+        "variable_name": "Localised",
+        "term": "Confined disease",
+        "description": "Is localised",
+        "entity": "Stage"
+    },
+    "4228659": {
+        "variable_name": "Localised",
+        "term": "Number of tumor nodules",
+        "description": "Is localised",
+        "entity": "Stage"
+    },
+    "32943": {
+        "variable_name": "Loco-regional",
+        "term": "Invasive Disease",
+        "description": "Loco-regional information",
+        "entity": "Stage"
+    },
+    "36769249": {
+        "variable_name": "Loco-regional",
+        "term": "Transit Metastasis with Clinical Confirmation",
+        "description": "Loco-regional information",
+        "entity": "Stage"
+    },
+    "36769933": {
+        "variable_name": "Loco-regional",
+        "term": "Multifocal Tumor",
+        "description": "Loco-regional information",
+        "entity": "Stage"
+    },
+    "36769269": {
+        "variable_name": "Regional nodal metastases",
+        "term": "Regional spread to lymph node",
+        "description": "Describes if regional nodal mestastases happened",
+        "entity": "Stage"
+    },
+    "4201008": {
+        "variable_name": "Degree of cytologic Atypia",
+        "term": "Mild cytologic atypia",
+        "description": "morphological index oc cellular dedifferentation. Usually indicated as \"mild, moderate, severe atypia\"",
+        "entity": "PathologicalReportInfo"
+    },
+    "4086011": {
+        "variable_name": "Degree of cytologic Atypia",
+        "term": "Moderate cytologic atypia",
+        "description": "morphological index oc cellular dedifferentation. Usually indicated as \"mild, moderate, severe atypia\"",
+        "entity": "PathologicalReportInfo"
+    },
+    "4203317": {
+        "variable_name": "Degree of cytologic Atypia",
+        "term": "Severe cytologic atypia",
+        "description": "morphological index oc cellular dedifferentation. Usually indicated as \"mild, moderate, severe atypia\"",
+        "entity": "PathologicalReportInfo"
+    },
+    "37204279": {
+        "variable_name": "Pattern of Growth",
+        "term": "Epithelioid sarcoma",
+        "description": "Cell morphology, e.g. epitheliod, spindle-cell, pleomorphic, small-ce, etc.",
+        "entity": "PathologicalReportInfo"
+    },
+    "4321133": {
+        "variable_name": "Pattern of Growth",
+        "term": "Spindle cell sarcoma",
+        "description": "Cell morphology, e.g. epitheliod, spindle-cell, pleomorphic, small-ce, etc.",
+        "entity": "PathologicalReportInfo"
+    },
+    "4116200": {
+        "variable_name": "Pattern of Growth",
+        "term": "Giant cell sarcoma",
+        "description": "Cell morphology, e.g. epitheliod, spindle-cell, pleomorphic, small-ce, etc.",
+        "entity": "PathologicalReportInfo"
+    },
+    "32667": {
+        "variable_name": "Mitotic Activity",
+        "term": "mitoses per square millimeter",
+        "description": "Mytotic index, usually reported as \"mytosis XX/10 HPF - high power fields)",
+        "entity": "PathologicalReportInfo"
+    },
+    "36768230": {
+        "variable_name": "Infiltration of surrounding myometrium",
+        "term": "Invasion into the myometrium",
+        "description": "morphological feature regarding the infiltration of the muscular uterine envelope, called myometrium",
+        "entity": "PathologicalReportInfo"
+    },
+    "4138252": {
+        "variable_name": "Type of necrosis",
+        "term": "Coagulative necrosis",
+        "description": "Evidence or not of necrosis, i.e. dead cells within the tumor mass (the type is not reallly relevant, although may be described)",
+        "entity": "PathologicalReportInfo"
+    },
+    "4144966": {
+        "variable_name": "Type of necrosis",
+        "term": "Caseous necrosis",
+        "description": "Evidence or not of necrosis, i.e. dead cells within the tumor mass (the type is not reallly relevant, although may be described)",
+        "entity": "PathologicalReportInfo"
+    },
+    "4219751": {
+        "variable_name": "Type of necrosis",
+        "term": "Liquefactive necrosis",
+        "description": "Evidence or not of necrosis, i.e. dead cells within the tumor mass (the type is not reallly relevant, although may be described)",
+        "entity": "PathologicalReportInfo"
+    },
+    "4195121": {
+        "variable_name": "Type of necrosis",
+        "term": "Fat necrosis",
+        "description": "Evidence or not of necrosis, i.e. dead cells within the tumor mass (the type is not reallly relevant, although may be described)",
+        "entity": "PathologicalReportInfo"
+    },
+    "4179476": {
+        "variable_name": "Type of necrosis",
+        "term": "Fibrinoid necrosis",
+        "description": "Evidence or not of necrosis, i.e. dead cells within the tumor mass (the type is not reallly relevant, although may be described)",
+        "entity": "PathologicalReportInfo"
+    },
+    "4167696": {
+        "variable_name": "Expression of ER/PR",
+        "term": "Estrogen receptor positive tumor",
+        "description": "immunohistochemical presence or not of estrogen and progesteron receptors, usually written as ER and PgR + or -, positive or negative",
+        "entity": "PathologicalReportInfo"
+    },
+    "4261933": {
+        "variable_name": "Expression of ER/PR",
+        "term": "Estrogen receptor negative neoplasm",
+        "description": "immunohistochemical presence or not of estrogen and progesteron receptors, usually written as ER and PgR + or -, positive or negative",
+        "entity": "PathologicalReportInfo"
+    },
+    "4219694": {
+        "variable_name": "Expression of ER/PR",
+        "term": "Progesterone receptor positive tumor",
+        "description": "immunohistochemical presence or not of estrogen and progesteron receptors, usually written as ER and PgR + or -, positive or negative",
+        "entity": "PathologicalReportInfo"
+    },
+    "4261934": {
+        "variable_name": "Expression of ER/PR",
+        "term": "Progesterone receptor negative neoplasm",
+        "description": "immunohistochemical presence or not of estrogen and progesteron receptors, usually written as ER and PgR + or -, positive or negative",
+        "entity": "PathologicalReportInfo"
+    },
+    "4163142": {
+        "variable_name": "vascular intrusion or invasion",
+        "term": "Vascular invasion by tumor present",
+        "description": "presence or not of cancer cells within the tumor blood vessels.",
+        "entity": "PathologicalReportInfo"
+    },
+    "4038339": {
+        "variable_name": "Gene mutation analysis performed",
+        "term": "Gene mutation analysis",
+        "description": "Clarifies whether a gene mutation analysis is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "4039364": {
+        "variable_name": "Tests for chromosome translocations performed",
+        "term": "Translocation analysis",
+        "description": "Clarifies whether a tests for chromosome translocations is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "40485067": {
+        "variable_name": "Next generation sequencing (NGS)  performed",
+        "term": "Analysis using chain termination sequencing technique",
+        "description": "Clarifies whether a NGS analysis is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "40482792": {
+        "variable_name": "Polymerase chain reaction\u00a0(PCR)\u00a0test performed",
+        "term": "Quantitative PCR analysis",
+        "description": "Clarifies whether a PCR analysis is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "4035726": {
+        "variable_name": "Immunohistochemistry  performed",
+        "term": "Immunohistochemistry procedure",
+        "description": "Clarifies whether a immunohiostochemestry analysis is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "19387013": {
+        "variable_name": "Circulating Tumour DNA (ctDNA) performed",
+        "term": "Circulating Tumor DNA",
+        "description": "Clarifies whether a ctDNA analysis is performed",
+        "entity": "GeneticTestExpression"
+    },
+    "4301351": {
+        "variable_name": "Surgery type",
+        "term": "Surgical procedure",
+        "description": "Primary surgery/re-excision (check with unplanned or excisional biopsy)\n",
+        "entity": "Surgery"
+    },
+    "4315400": {
+        "variable_name": "Surgery type",
+        "term": "Local excision",
+        "description": "Primary surgery/re-excision (check with unplanned or excisional biopsy)\n",
+        "entity": "Surgery"
+    },
+    "4217482": {
+        "variable_name": "Surgery type",
+        "term": "Amputation",
+        "description": "Primary surgery/re-excision (check with unplanned or excisional biopsy)\n",
+        "entity": "Surgery"
+    },
+    "4181193": {
+        "variable_name": "Surgery type",
+        "term": "Limb operation",
+        "description": "Primary surgery/re-excision (check with unplanned or excisional biopsy)\n",
+        "entity": "Surgery"
+    },
+    "4179711": {
+        "variable_name": "Intent",
+        "term": "Palliative",
+        "description": "Radiotherapy intent refers to whether the intention of treatment is to cure the patient or to treat symptoms and palliate",
+        "entity": "Radiotherapy"
+    },
+    "4162591": {
+        "variable_name": "Intent",
+        "term": "Curative procedure intent",
+        "description": "Radiotherapy intent refers to whether the intention of treatment is to cure the patient or to treat symptoms and palliate",
+        "entity": "Radiotherapy"
+    },
+    "4236080": {
+        "variable_name": "Type of surgical approach on Tumour",
+        "term": "External/Open",
+        "description": "Describes the approach to tumor resection whether it includes skin incision (extenal or open ),  or it 's aproached through a natural orifice (Transnasal/transorbital/transoral) or if the approach combines two or more of the previous ones",
+        "entity": "Surgery"
+    },
+    "4050374": {
+        "variable_name": "Type of surgical approach on Tumour",
+        "term": "Transnasal",
+        "description": "Describes the approach to tumor resection whether it includes skin incision (extenal or open ),  or it 's aproached through a natural orifice (Transnasal/transorbital/transoral) or if the approach combines two or more of the previous ones",
+        "entity": "Surgery"
+    },
+    "4044897": {
+        "variable_name": "Type of surgical approach on Tumour",
+        "term": "Transorbital",
+        "description": "Describes the approach to tumor resection whether it includes skin incision (extenal or open ),  or it 's aproached through a natural orifice (Transnasal/transorbital/transoral) or if the approach combines two or more of the previous ones",
+        "entity": "Surgery"
+    },
+    "4038679": {
+        "variable_name": "Type of surgical approach on Tumour",
+        "term": "Transoral",
+        "description": "Describes the approach to tumor resection whether it includes skin incision (extenal or open ),  or it 's aproached through a natural orifice (Transnasal/transorbital/transoral) or if the approach combines two or more of the previous ones",
+        "entity": "Surgery"
+    },
+    "4333339": {
+        "variable_name": "Type of surgical approach on Tumour",
+        "term": "Craniofacial",
+        "description": "Describes the approach to tumor resection whether it includes skin incision (extenal or open ),  or it 's aproached through a natural orifice (Transnasal/transorbital/transoral) or if the approach combines two or more of the previous ones",
+        "entity": "Surgery"
+    },
+    "1634643": {
+        "variable_name": "Margins after surgery",
+        "term": "R0: No residual tumor",
+        "description": "The R0 (\u201cno residual rumor\u201d) category applies only to cases in which residual tumor cannot be detected by conventional diagnostic methods. A more exact definition would read \u201cno detectable residual tumor.\u201dThis category corresponds to surgical resection for cure.\nThe R1 category is reserved exclusively for cases in which residual tumor is found by histologic examination. This category may apply to biopsy sampling of the regional tissue at the site of resection or of a distant site at the time of surgery. It also applies to microscopic examination of the resection margins of the surgical resection specimen by the pathologist.\nR2 applies to cases with macroscopically visible residual tumor that is detected either clinically or pathologically.",
+        "entity": "Surgery"
+    },
+    "1633801": {
+        "variable_name": "Margins after surgery",
+        "term": "R1: Microscopic residual tumor",
+        "description": "The R0 (\u201cno residual rumor\u201d) category applies only to cases in which residual tumor cannot be detected by conventional diagnostic methods. A more exact definition would read \u201cno detectable residual tumor.\u201dThis category corresponds to surgical resection for cure.\nThe R1 category is reserved exclusively for cases in which residual tumor is found by histologic examination. This category may apply to biopsy sampling of the regional tissue at the site of resection or of a distant site at the time of surgery. It also applies to microscopic examination of the resection margins of the surgical resection specimen by the pathologist.\nR2 applies to cases with macroscopically visible residual tumor that is detected either clinically or pathologically.",
+        "entity": "Surgery"
+    },
+    "1634484": {
+        "variable_name": "Margins after surgery",
+        "term": "R2: Macroscopic residual tumor",
+        "description": "The R0 (\u201cno residual rumor\u201d) category applies only to cases in which residual tumor cannot be detected by conventional diagnostic methods. A more exact definition would read \u201cno detectable residual tumor.\u201dThis category corresponds to surgical resection for cure.\nThe R1 category is reserved exclusively for cases in which residual tumor is found by histologic examination. This category may apply to biopsy sampling of the regional tissue at the site of resection or of a distant site at the time of surgery. It also applies to microscopic examination of the resection margins of the surgical resection specimen by the pathologist.\nR2 applies to cases with macroscopically visible residual tumor that is detected either clinically or pathologically.",
+        "entity": "Surgery"
+    },
+    "36768904": {
+        "variable_name": "Tumor rupture",
+        "term": "Tumor Rupture",
+        "description": "Tumor rupture Yes/No",
+        "entity": "Surgery"
+    },
+    "4227243": {
+        "variable_name": "Surgical specimen Mitotic count",
+        "term": "Number of mitoses per 10 high power fields",
+        "description": "Surgical specimen Mitotic count",
+        "entity": "Surgery"
+    },
+    "4112106": {
+        "variable_name": "Laterality of the dissection",
+        "term": "Ipsilateral",
+        "description": "Describes laterality of the neck surgical procedure: \nIpsilateral when only  the neck ipsilateral to the tumor has been treated\nContralateral when only the neck contralateral to the tumor has been treated \nBilateral: when both sides of the neck have been treated",
+        "entity": "Surgery"
+    },
+    "4117496": {
+        "variable_name": "Laterality of the dissection",
+        "term": "Bilateral Sampling",
+        "description": "Describes laterality of the neck surgical procedure: \nIpsilateral when only  the neck ipsilateral to the tumor has been treated\nContralateral when only the neck contralateral to the tumor has been treated \nBilateral: when both sides of the neck have been treated",
+        "entity": "Surgery"
+    },
+    "4112107": {
+        "variable_name": "Laterality of the dissection",
+        "term": "Controlateral",
+        "description": "Describes laterality of the neck surgical procedure: \nIpsilateral when only  the neck ipsilateral to the tumor has been treated\nContralateral when only the neck contralateral to the tumor has been treated \nBilateral: when both sides of the neck have been treated",
+        "entity": "Surgery"
+    },
+    "4132135": {
+        "variable_name": "Surgical complications (Clavien-Dindo Classification)",
+        "term": "Absent",
+        "description": "Describes presence and grade of complications after a surgical procedure,",
+        "entity": "Surgery"
+    },
+    "40310107": {
+        "variable_name": "type of systemic treatment",
+        "term": "Immunotherapy",
+        "description": "Select the type of systemic treatment administered. It is possible to directly select the single treatment as appropriate.",
+        "entity": "SystemicTreatment"
+    },
+    "44804498": {
+        "variable_name": "Setting",
+        "term": "Adjuvant",
+        "description": "clarifies the context / how the therapy was administered alone or in conjunction with other treatments\n\u2022 Neoadjuvant: treatment given as a first step to shrink a tumor before the main treatment, which is usually surgery, is given. Examples of neoadjuvant therapy include chemotherapy, radiation therapy, and hormone therapy. It is a type of induction therapy.\n\u2022 Adjuvant: additional cancer treatment given after the primary treatment to lower the risk that the cancer will come back. Adjuvant therapy may include chemotherapy, radiation therapy, hormone therapy, targeted therapy, or biological therapy.\n\u2022 Concomitant/concurrent: A treatment that is given at the same time as another (es. Chemotherapy + radiotherapy).\n",
+        "entity": "SystemicTreatment"
+    },
+    "4119031": {
+        "variable_name": "Chemotherapy info",
+        "term": "Preoperative",
+        "description": "Information for chemotherapy",
+        "entity": "SystemicTreatment"
+    },
+    "4118656": {
+        "variable_name": "Chemotherapy info",
+        "term": "Postoperative period",
+        "description": "Information for chemotherapy",
+        "entity": "SystemicTreatment"
+    },
+    "3184898": {
+        "variable_name": "Chemotherapy info",
+        "term": "Hyperthermic intraperitoneal chemotherapy",
+        "description": "Information for chemotherapy",
+        "entity": "SystemicTreatment"
+    },
+    "4133895": {
+        "variable_name": "Chemotherapy info",
+        "term": "Therapeutic",
+        "description": "Information for chemotherapy",
+        "entity": "SystemicTreatment"
+    },
+    "4082735": {
+        "variable_name": "Reason for end of treatment",
+        "term": "Treatment completed",
+        "description": "Clarifies the reasons why the treatment ended or was interrupted",
+        "entity": "SystemicTreatment"
+    },
+    "438028": {
+        "variable_name": "Treatment Completed as Planned?",
+        "term": "Toxicity",
+        "description": "Refers to whether patient completed all treatment as planned or if it had to be interrupted due to several reasons including toxicity, a co-morbidity preventing the delivery of radiation (pulmonary embolism, failure to thrive during RT), death due to progression of the cancer or patient decision",
+        "entity": "Radiotherapy"
+    },
+    "37017062": {
+        "variable_name": "Reason for end of treatment",
+        "term": "Procedure discontinued by patient",
+        "description": "Clarifies the reasons why the treatment ended or was interrupted",
+        "entity": "SystemicTreatment"
+    },
+    "4306655": {
+        "variable_name": "Treatment Completed as Planned?",
+        "term": "Death",
+        "description": "Refers to whether patient completed all treatment as planned or if it had to be interrupted due to several reasons including toxicity, a co-morbidity preventing the delivery of radiation (pulmonary embolism, failure to thrive during RT), death due to progression of the cancer or patient decision",
+        "entity": "Radiotherapy"
+    },
+    "4058775": {
+        "variable_name": "Setting",
+        "term": "Postoperative",
+        "description": "Whether radiotherapy is delivered as the main treatment modality (definitive) or if it is delivered before or after another treatment such as surgery",
+        "entity": "Radiotherapy"
+    },
+    "607996": {
+        "variable_name": "Beam quality",
+        "term": "External beam RT Photons",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "4165039": {
+        "variable_name": "Beam quality",
+        "term": "External beam RT Electrons",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "607995": {
+        "variable_name": "Beam quality",
+        "term": "External beam radiation therapy using carbon ions",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "4024005": {
+        "variable_name": "Beam quality",
+        "term": "External Beam RT Protons",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "4012485": {
+        "variable_name": "Beam quality",
+        "term": "Brachytherapy interstitial endocavitary contact",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "4161415": {
+        "variable_name": "Beam quality",
+        "term": "Radionuclide therapy",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "4058601": {
+        "variable_name": "Beam quality",
+        "term": "Boron neutron capture Therapy",
+        "description": "Describes the type of radiation therapy given. If external beam, please specify if delivered with Photons (most common), electrons, carbon, or protons.",
+        "entity": "Radiotherapy"
+    },
+    "603132": {
+        "variable_name": "Treatment technique",
+        "term": "2D",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "37156151": {
+        "variable_name": "Treatment technique",
+        "term": "Three dimensional external beam radiation therapy",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "40480519": {
+        "variable_name": "Treatment technique",
+        "term": "IMRT CONVENTIONAL",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "603135": {
+        "variable_name": "Treatment technique",
+        "term": "VMAT",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "3662120": {
+        "variable_name": "Treatment technique",
+        "term": "Tomotherapy",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "4215577": {
+        "variable_name": "Treatment technique",
+        "term": "SBRT",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "37156211": {
+        "variable_name": "Treatment technique",
+        "term": "Ultra high dose rate radiotherapy",
+        "description": "Refers to the type of radiotherapy treatment delivered",
+        "entity": "Radiotherapy"
+    },
+    "4137449": {
+        "variable_name": "Type of local treatment",
+        "term": "Hypertermia treatment",
+        "description": "Which type of local treatment is applied",
+        "entity": "OtherLocalTreatment"
+    },
+    "9177": {
+        "variable_name": "Type of local treatment",
+        "term": "Other",
+        "description": "Which type of local treatment is applied",
+        "entity": "OtherLocalTreatment"
+    }
+}

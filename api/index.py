@@ -27,12 +27,8 @@ class TextToMatchRequest(BaseModel):
 
 
 # Assuming your project home is 'IDEA4RC-NQUI', and this script is in a subfolder
-project_home = (
-    Path(__file__).resolve().parent.parent
-)  # Adjust based on your file's location
-relative_path = (
-    project_home / "IDEA4RC-term" / "dictionaries" / "code_to_term_variable.json"
-)
+project_home = Path(__file__).resolve().parent  # Adjust based on your file's location
+relative_path = project_home / "code_to_term_variable.json"
 
 # Convert to string if necessary
 term_to_code_path = str(relative_path)
