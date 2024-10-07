@@ -25,8 +25,7 @@ export function FinishedDemo({ isEverythingChecked, onClick }: FinishedDemoProps
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button disabled={!isEverythingChecked} className={`w-min m-auto button ${isEverythingChecked ? "button-enabled" : "button-disabled"}`}
-                    onClick={() => { onClick }}>
+                <Button disabled={!isEverythingChecked} className={`w-min m-auto button ${isEverythingChecked ? "button-enabled" : "button-disabled"}`} onClick={() => { onClick() }}>
                     <Brain className="mr-2 h-4 w-4" /> Send to AI
                 </Button>
             </DialogTrigger>
@@ -34,7 +33,7 @@ export function FinishedDemo({ isEverythingChecked, onClick }: FinishedDemoProps
                 <DialogHeader>
                     <DialogTitle>You finished the demonstration! Thanks!</DialogTitle>
                     <DialogDescription>
-                        Would you please fill the next survey? It's just 2 minutes.
+                        Would you please fill the next survey? Its just 2 minutes.
                     </DialogDescription>
                 </DialogHeader>
                 <div className="flex items-center space-x-2">

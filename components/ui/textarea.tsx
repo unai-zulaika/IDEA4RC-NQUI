@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Brain, FileType2, Loader2 } from "lucide-react";
+import { FileType2, Loader2 } from "lucide-react";
 import { TermDataDialog } from "@/components/ui/TermDataDialog";
 import { Separator } from "./separator";
 import { FinishedDemo } from "./FinishedDemo";
 
-export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
+export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ className, ...props }, ref) => {
   const [richInputText, setRichInputText] = useState<React.ReactNode>();
@@ -18,7 +18,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ classNa
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [checkedStates, setCheckedStates] = useState<Record<string, boolean>>({}); // Track checked state per term
   const [isEverythingChecked, setIsEverythingChecked] = useState<boolean>(false);
-  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [_, setShowAlert] = useState<boolean>(false);
   const [trigger, setTrigger] = useState<boolean>(false); // Trigger state to force updates
 
   useEffect(() => {
