@@ -67,35 +67,135 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       }));
     };
 
+    // Utility function to preprocess matchedTerms and remove shorter terms if they share common words
+    function filterMatchedTerms(matchedTerms: any): any {
+      const termEntries = Object.entries(matchedTerms);
+      const termsToKeep: any = {};
+
+      // Compare each term with every other term
+      for (let i = 0; i < termEntries.length; i++) {
+        const [termA, dataA] = termEntries[i];
+        const wordsA = new Set(termA.split(" ").map((w) => w.trim()));
+
+        let shouldKeepA = true;
+
+        for (let j = 0; j < termEntries.length; j++) {
+          if (i === j) continue; // Skip comparing the same term
+
+          const [termB] = termEntries[j];
+          const wordsB = new Set(termB.split(" ").map((w) => w.trim()));
+
+          // Check if both terms share words
+          const commonWords = [...wordsA].filter(word => wordsB.has(word));
+
+          // If they share words and termA has fewer words than termB, skip termA
+          if (commonWords.length > 0 && wordsA.size < wordsB.size) {
+            shouldKeepA = false;
+            break; // No need to check further if termA is already disqualified
+          }
+        }
+
+        // If termA is not disqualified, keep it
+        if (shouldKeepA) {
+          termsToKeep[termA] = dataA;
+        }
+      }
+
+      return termsToKeep;
+    }
+
+    // Helper function to check if all words in the matchedTerms are present in the text slice (ignoring order and whitespace)
+    function subsetWordsMatch(sliceToMatch: string[], matchWordsSet: Set<string>): boolean {
+      const wordsInSlice = new Set(sliceToMatch.map(word => word.trim()).filter(word => word !== ""));
+
+      // Check if the set of words in the slice is a subset of the matchWordsSet
+      for (const word of wordsInSlice) {
+        if (!matchWordsSet.has(word)) {
+          return false; // If any word in the slice is not in matchWordsSet, it's not a match
+        }
+      }
+
+      return true; // All words in sliceToMatch are in matchWordsSet (subset match)
+    }
+
     // Function to replace dictionary keys in the long string with buttons
     function replaceWithButton(
       text: string,
       matchedTerms: any
     ): React.ReactNode {
+      // Preprocess the matchedTerms to remove shorter overlapping terms
+      const filteredMatchedTerms = filterMatchedTerms(matchedTerms);
+
+      // Sort the matchedTerms based on the number of words in descending order (to prioritize multi-word matches)
+      const sortedTerms = Object.entries(filteredMatchedTerms);
+
       const elements: React.ReactNode[] = [];
-      const words = text.replace(/[^a-zA-Z0-9\s\-]/g, "").split(/(\s+)/); // Split the text into words including spaces
+      const words = text.split(/(\s+)/); // Split text including spaces, preserving them
 
-      words.forEach((word, index) => {
-        if (matchedTerms.hasOwnProperty(word.trim()) && word.trim() !== "") {
-          // Create a TermDataDialog for each matched term
-          const button = (
-            <TermDataDialog
-              key={index}
-              term_text={word}
-              data={matchedTerms[word.trim()]} // Pass the list of data for the term
-              onCheck={(isChecked: boolean) =>
-                handleTermValidation(word.trim(), isChecked)
-              } // Update checked state for the term
-            />
-          );
-          elements.push(button);
-        } else {
-          elements.push(<span key={index}>{word}</span>);
+      let i = 0;
+      while (i < words.length) {
+        // Skip whitespaces in the text when matching
+        if (words[i].trim() === "") {
+          elements.push(<span key={i}>{words[i]}</span>);
+          i += 1; // Move to the next word (this is just whitespace)
+          continue;
         }
-      });
 
+        let matchFound = false;
+
+        // Try matching each term from the sorted dictionary (order of words doesn't matter)
+        for (const [matchKey, data] of sortedTerms) {
+          const matchWordsSet = new Set(matchKey.split(" ").map((w) => w.trim()));
+
+          // Collect a slice of words to compare, ignoring whitespaces
+          let sliceToMatch: string[] = [];
+          let tempIndex = i;
+          while (tempIndex < words.length && sliceToMatch.length < matchWordsSet.size) {
+            if (words[tempIndex].trim() !== "") {
+              sliceToMatch.push(words[tempIndex].trim());
+            }
+            tempIndex++;
+          }
+          console.log(sliceToMatch);
+          // Check if the slice of words matches a subset of the matched term (ignoring order)
+          if (subsetWordsMatch(sliceToMatch, matchWordsSet)) {
+            // We've found a match
+            const matchedText = words.slice(i, tempIndex).join(""); // Join without trimming to preserve spaces
+
+            // Create the button element for the matched phrase
+            elements.push(
+              <TermDataDialog
+                key={i}
+                term_text={matchedText}
+                data={data}
+                onCheck={(isChecked: boolean) =>
+                  handleTermValidation(matchKey, isChecked)
+                }
+              />
+            );
+
+            // Move the index forward by the number of matched words (including spaces)
+            i = tempIndex;
+            matchFound = true;
+            break;
+          }
+        }
+
+        // If no match was found, just push the current word as plain text
+        if (!matchFound) {
+          elements.push(<span key={i}>{words[i]}</span>);
+          i += 1; // Move to the next word
+        }
+      }
+
+      // Return the updated text with buttons and plain text
       return <p>{elements}</p>;
     }
+
+
+
+
+
 
     const onProcessTextClicked = async () => {
       setIsLoading(true);
@@ -110,7 +210,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           },
           body: JSON.stringify({
             text_to_match: userInputText.replace(/[^a-zA-Z0-9\s\-]/g, ""),
-            threshold: 50,
+            threshold: 42,
           }),
         });
 

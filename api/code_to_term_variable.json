@@ -4228,5 +4228,59 @@
     "term": "Salivary duct carcinoma",
     "entity": "Diagnosis",
     "code": 4287334
+  },
+  "pg1": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary in situ (C50._) of nipple",
+    "entity": "Diagnosis",
+    "code": 36403075
+  },
+  "pg2": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary of axillary tail of breast",
+    "entity": "Diagnosis",
+    "code": 36554287
+  },
+  "pg3": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary of breast, NOS",
+    "entity": "Diagnosis",
+    "code": 44500509
+  },
+  "pg4": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary of central portion of breast",
+    "entity": "Diagnosis",
+    "code": 44502829
+  },
+  "pg5": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary of lower-inner quadrant of breast",
+    "entity": "Diagnosis",
+    "code": 36519367
+  },
+  "pg6": {
+    "variable_name": "Histology/Topography",
+    "term": "Paget disease, mammary of lower-outer quadrant of breast",
+    "entity": "Diagnosis",
+    "code": 44498966
+  },
+  "topo1": {
+    "variable_name": "Histology/Topography",
+    "term": "Acinar cell carcinoma of lower-inner quadrant of breast",
+    "entity": "Diagnosis",
+    "code": 36528296
+  },
+  "topo2": {
+    "variable_name": "Histology/Topography",
+    "term": "Acinar cell cystadenocarcinoma of lower-inner quadrant of breast",
+    "entity": "Diagnosis",
+    "code": 36535001
+  },
+  "topo3": {
+    "variable_name": "Histology/Topography",
+    "term": "Adenocarcinoma in situ in villous adenoma of lower-inner quadrant of breast",
+    "entity": "Diagnosis",
+    "code": 36560982
   }
 }
