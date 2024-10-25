@@ -86,7 +86,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           const wordsB = new Set(termB.split(" ").map((w) => w.trim()));
 
           // Check if both terms share words
-          const commonWords = [...wordsA].filter(word => wordsB.has(word));
+          const commonWords = [...wordsA].filter((word) => wordsB.has(word));
 
           // If they share words and termA has fewer words than termB, skip termA
           if (commonWords.length > 0 && wordsA.size < wordsB.size) {
@@ -105,10 +105,15 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     }
 
     // Helper function to check if all words in the matchedTerms are present in the text slice (ignoring order and whitespace)
-    function subsetWordsMatch(sliceToMatch: string[], matchWordsSet: Set<string>): boolean {
-      const wordsInSlice = new Set(sliceToMatch.map(word => word.trim()).filter(word => word !== ""));
+    function subsetWordsMatch(
+      sliceToMatch: string[],
+      matchWordsSet: Set<string>
+    ): boolean {
+      const wordsInSlice = new Set(
+        sliceToMatch.map((word) => word.trim()).filter((word) => word !== "")
+      );
 
-      // Check if the set of words in the slice is a subset of the matchWordsSet
+      // Check if all words in the slice are in the matchWordsSet
       for (const word of wordsInSlice) {
         if (!matchWordsSet.has(word)) {
           return false; // If any word in the slice is not in matchWordsSet, it's not a match
@@ -118,6 +123,46 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       return true; // All words in sliceToMatch are in matchWordsSet (subset match)
     }
 
+    // Function to find the shortest slice that includes all words in the sortedTerm
+    function findMinimalCommonSlice(
+      words: string[],
+      startIndex: number,
+      matchWordsSet: Set<string>
+    ): { slice: string[]; endIndex: number } | null {
+      let shortestSlice: string[] | null = null;
+      let shortestEndIndex = -1;
+
+      for (let i = startIndex; i < words.length; i++) {
+        const matchedWords = new Set<string>();
+        let slice: string[] = [];
+        let endIndex = i;
+
+        for (let j = i; j < words.length; j++) {
+          const word = words[j].trim();
+          if (word !== "" && matchWordsSet.has(word)) {
+            matchedWords.add(word);
+          }
+
+          slice.push(words[j]);
+
+          // If all words from matchWordsSet are found, check if this is the shortest slice
+          if (matchedWords.size === matchWordsSet.size) {
+            if (shortestSlice === null || slice.length < shortestSlice.length) {
+              shortestSlice = [...slice]; // Copy the slice
+              shortestEndIndex = j;
+            }
+            break; // Continue to find shorter matches starting at different points
+          }
+        }
+      }
+
+      if (shortestSlice) {
+        return { slice: shortestSlice, endIndex: shortestEndIndex };
+      }
+
+      return null; // No valid match found
+    }
+
     // Function to replace dictionary keys in the long string with buttons
     function replaceWithButton(
       text: string,
@@ -125,12 +170,15 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     ): React.ReactNode {
       // Preprocess the matchedTerms to remove shorter overlapping terms
       const filteredMatchedTerms = filterMatchedTerms(matchedTerms);
-
+      console.log(filteredMatchedTerms);
       // Sort the matchedTerms based on the number of words in descending order (to prioritize multi-word matches)
       const sortedTerms = Object.entries(filteredMatchedTerms);
 
       const elements: React.ReactNode[] = [];
       const words = text.split(/(\s+)/); // Split text including spaces, preserving them
+      const unmatchedTerms: Set<string> = new Set(
+        sortedTerms.map(([term]) => term)
+      ); // Track unmatched terms
 
       let i = 0;
       while (i < words.length) {
@@ -143,20 +191,25 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
         let matchFound = false;
 
-        // Try matching each term from the sorted dictionary (order of words doesn't matter)
+        // Try matching each term from the sorted dictionary (ignoring order and length)
         for (const [matchKey, data] of sortedTerms) {
-          const matchWordsSet = new Set(matchKey.split(" ").map((w) => w.trim()));
+          const matchWordsSet = new Set(
+            matchKey.split(" ").map((w) => w.trim())
+          );
 
           // Collect a slice of words to compare, ignoring whitespaces
           let sliceToMatch: string[] = [];
           let tempIndex = i;
-          while (tempIndex < words.length && sliceToMatch.length < matchWordsSet.size) {
+          while (
+            tempIndex < words.length &&
+            sliceToMatch.length < matchWordsSet.size
+          ) {
             if (words[tempIndex].trim() !== "") {
               sliceToMatch.push(words[tempIndex].trim());
             }
             tempIndex++;
           }
-          console.log(sliceToMatch);
+
           // Check if the slice of words matches a subset of the matched term (ignoring order)
           if (subsetWordsMatch(sliceToMatch, matchWordsSet)) {
             // We've found a match
@@ -174,6 +227,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               />
             );
 
+            // Mark this term as matched and remove it from the unmatchedTerms set
+            unmatchedTerms.delete(matchKey);
+
             // Move the index forward by the number of matched words (including spaces)
             i = tempIndex;
             matchFound = true;
@@ -188,14 +244,44 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         }
       }
 
+      // SECOND PASS: Try to find minimal common matches for unmatched terms
+      for (const [matchKey, data] of sortedTerms) {
+        if (unmatchedTerms.has(matchKey)) {
+          const matchWordsSet = new Set(
+            matchKey.split(" ").map((w) => w.trim())
+          );
+          for (let i = 0; i < words.length; i++) {
+            const minimalMatch = findMinimalCommonSlice(
+              words,
+              i,
+              matchWordsSet
+            );
+
+            if (minimalMatch) {
+              const matchedText = minimalMatch.slice.join("");
+
+              // Create the button element for the minimal match
+              elements.push(
+                <TermDataDialog
+                  key={i}
+                  term_text={matchedText}
+                  data={data}
+                  onCheck={(isChecked: boolean) =>
+                    handleTermValidation(matchKey, isChecked)
+                  }
+                />
+              );
+
+              i = minimalMatch.endIndex + 1; // Skip to the end of the matched slice
+              break; // Only one minimal match needed
+            }
+          }
+        }
+      }
+
       // Return the updated text with buttons and plain text
       return <p>{elements}</p>;
     }
-
-
-
-
-
 
     const onProcessTextClicked = async () => {
       setIsLoading(true);

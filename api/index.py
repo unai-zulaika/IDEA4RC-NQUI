@@ -42,11 +42,11 @@ term_to_code = load_term_to_code(term_to_code_path)
 
 @app.post("/api/py/match_terms")
 def api_match_terms(request: TextToMatchRequest):
-    print(term_to_code)
+
     matched_json = match_terms_variable_names(
         request.text_to_match, term_to_code, threshold=request.threshold
     )
-
+    matched_json.pop("")
     return matched_json
 
 
@@ -55,6 +55,7 @@ async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:
         data = await websocket.receive_text()
-        matched_json = match_terms_variable_names(data, term_to_code, threshold=50)
+        matched_json = match_terms_variable_names(
+            data, term_to_code, threshold=50)
 
         await websocket.send_json(matched_json)

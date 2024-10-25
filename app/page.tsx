@@ -21,17 +21,28 @@ export default function Home() {
             <h4 className="text-xl font-medium leading-none">Examples</h4>
             <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
-              Retrieve all patient id for those patient diagnosed with a
-              angiomyxoma or carcinoma
+              Patient diagnosed with a angiomyxoma or carcinoma
             </p>
             <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
-              Retrieve all patient id for patients diagnosed with primary retroperitoneal sarcoma, between 2010-2014
+              Patients diagnosed with primary retroperitoneal sarcoma, between
+              2010-2014
             </p>
             <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
-              Retrieve all patient id for patients with head and neck cancers with at least 1st progression and any treatment of first progression
+              Patients with head and neck cancers with at least 1st progression
+              and any treatment of first progression
             </p>
+            <Separator className="my-4" />
+            <p className="text-sm text-muted-foreground">
+              Female patients diagnosed with a paget disease
+            </p>
+            <Separator className="my-4" />
+            <p className="text-sm text-muted-foreground">
+              Patients diagnosed in the lower inner quadrant of breast that went
+              under lumpectomy
+            </p>
+            <Separator className="my-4" />
           </div>
         </div>
       </main>
