@@ -46,7 +46,9 @@ def api_match_terms(request: TextToMatchRequest):
     matched_json = match_terms_variable_names(
         request.text_to_match, term_to_code, threshold=request.threshold
     )
-    matched_json.pop("")
+    if "" in matched_json:
+        matched_json.pop("")
+
     return matched_json
 
 
