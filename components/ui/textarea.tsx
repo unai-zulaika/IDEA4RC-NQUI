@@ -69,9 +69,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     // Utility function to preprocess matchedTerms and remove shorter terms if they share common words
-    function filterMatchedTerms(matchedTerms: { [key: string]: Term[] }): {
-      [key: string]: Term[];
-    } {
+    function filterMatchedTerms(matchedTerms: any): any {
       const termEntries = Object.entries(matchedTerms);
       const termsToKeep: any = {};
 
@@ -126,10 +124,50 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       return true; // All words in sliceToMatch are in matchWordsSet (subset match)
     }
 
+    // Function to find the shortest slice that includes all words in the sortedTerm
+    function findMinimalCommonSlice(
+      words: string[],
+      startIndex: number,
+      matchWordsSet: Set<string>
+    ): { slice: string[]; endIndex: number } | null {
+      let shortestSlice: string[] | null = null;
+      let shortestEndIndex = -1;
+
+      for (let i = startIndex; i < words.length; i++) {
+        const matchedWords = new Set<string>();
+        let slice: string[] = [];
+        let endIndex = i;
+
+        for (let j = i; j < words.length; j++) {
+          const word = words[j].trim();
+          if (word !== "" && matchWordsSet.has(word)) {
+            matchedWords.add(word);
+          }
+
+          slice.push(words[j]);
+
+          // If all words from matchWordsSet are found, check if this is the shortest slice
+          if (matchedWords.size === matchWordsSet.size) {
+            if (shortestSlice === null || slice.length < shortestSlice.length) {
+              shortestSlice = [...slice]; // Copy the slice
+              shortestEndIndex = j;
+            }
+            break; // Continue to find shorter matches starting at different points
+          }
+        }
+      }
+
+      if (shortestSlice) {
+        return { slice: shortestSlice, endIndex: shortestEndIndex };
+      }
+
+      return null; // No valid match found
+    }
+
     // Function to replace dictionary keys in the long string with buttons
     function replaceWithButton(
       text: string,
-      matchedTerms: { [key: string]: Term[] }
+      matchedTerms: any
     ): React.ReactNode {
       // Preprocess the matchedTerms to remove shorter overlapping terms
       const filteredMatchedTerms = filterMatchedTerms(matchedTerms);
@@ -183,7 +221,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               <TermDataDialog
                 key={i}
                 term_text={matchedText}
-                data={data as Term[]} // Cast the data to Term[]
+                data={data as Term[]}
                 onCheck={(isChecked: boolean) =>
                   handleTermValidation(matchKey, isChecked)
                 }
@@ -204,6 +242,41 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         if (!matchFound) {
           elements.push(<span key={i}>{words[i]}</span>);
           i += 1; // Move to the next word
+        }
+      }
+
+      // SECOND PASS: Try to find minimal common matches for unmatched terms
+      for (const [matchKey, data] of sortedTerms) {
+        if (unmatchedTerms.has(matchKey)) {
+          const matchWordsSet = new Set(
+            matchKey.split(" ").map((w) => w.trim())
+          );
+          for (let i = 0; i < words.length; i++) {
+            const minimalMatch = findMinimalCommonSlice(
+              words,
+              i,
+              matchWordsSet
+            );
+
+            if (minimalMatch) {
+              const matchedText = minimalMatch.slice.join("");
+
+              // Create the button element for the minimal match
+              elements.push(
+                <TermDataDialog
+                  key={i}
+                  term_text={matchedText}
+                  data={data as Term[]}
+                  onCheck={(isChecked: boolean) =>
+                    handleTermValidation(matchKey, isChecked)
+                  }
+                />
+              );
+
+              i = minimalMatch.endIndex + 1; // Skip to the end of the matched slice
+              break; // Only one minimal match needed
+            }
+          }
         }
       }
 
