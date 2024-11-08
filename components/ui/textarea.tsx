@@ -129,9 +129,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       words: string[],
       startIndex: number,
       matchWordsSet: Set<string>
-    ): { slice: string[]; endIndex: number } | null {
+    ): { slice: string[]; endIndex: number; startIndex: number } | null {
       let shortestSlice: string[] | null = null;
       let shortestEndIndex = -1;
+      let shortestStartIndex = -1;
 
       for (let i = startIndex; i < words.length; i++) {
         const matchedWords = new Set<string>();
@@ -151,54 +152,52 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             if (shortestSlice === null || slice.length < shortestSlice.length) {
               shortestSlice = [...slice]; // Copy the slice
               shortestEndIndex = j;
+              shortestStartIndex = i;
             }
+            console.log(i);
+            console.log(j);
             break; // Continue to find shorter matches starting at different points
           }
         }
       }
 
       if (shortestSlice) {
-        return { slice: shortestSlice, endIndex: shortestEndIndex };
+        return { slice: shortestSlice, endIndex: shortestEndIndex, startIndex: shortestStartIndex };
       }
 
       return null; // No valid match found
     }
 
-    // Function to replace dictionary keys in the long string with buttons
     function replaceWithButton(
       text: string,
       matchedTerms: any
     ): React.ReactNode {
-      // Preprocess the matchedTerms to remove shorter overlapping terms
       const filteredMatchedTerms = filterMatchedTerms(matchedTerms);
-
-      // Sort the matchedTerms based on the number of words in descending order (to prioritize multi-word matches)
       const sortedTerms = Object.entries(filteredMatchedTerms);
 
       const elements: React.ReactNode[] = [];
+      let updatedElements: React.ReactNode[] = [];
       const words = text.split(/(\s+)/); // Split text including spaces, preserving them
       const unmatchedTerms: Set<string> = new Set(
         sortedTerms.map(([term]) => term)
-      ); // Track unmatched terms
+      );
+      const usedIndices = new Set<number>(); // Track indices already processed
 
       let i = 0;
       while (i < words.length) {
-        // Skip whitespaces in the text when matching
         if (words[i].trim() === "") {
           elements.push(<span key={i}>{words[i]}</span>);
-          i += 1; // Move to the next word (this is just whitespace)
+          i += 1;
           continue;
         }
 
         let matchFound = false;
 
-        // Try matching each term from the sorted dictionary (ignoring order and length)
         for (const [matchKey, data] of sortedTerms) {
           const matchWordsSet = new Set(
             matchKey.split(" ").map((w) => w.trim())
           );
 
-          // Collect a slice of words to compare, ignoring whitespaces
           let sliceToMatch: string[] = [];
           let tempIndex = i;
           while (
@@ -211,12 +210,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             tempIndex++;
           }
 
-          // Check if the slice of words matches a subset of the matched term (ignoring order)
           if (subsetWordsMatch(sliceToMatch, matchWordsSet)) {
-            // We've found a match
-            const matchedText = words.slice(i, tempIndex).join(""); // Join without trimming to preserve spaces
+            const matchedText = words.slice(i, tempIndex).join("");
 
-            // Create the button element for the matched phrase
             elements.push(
               <TermDataDialog
                 key={i}
@@ -228,30 +224,33 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               />
             );
 
-            // Mark this term as matched and remove it from the unmatchedTerms set
             unmatchedTerms.delete(matchKey);
-
-            // Move the index forward by the number of matched words (including spaces)
+            for (let j = i; j < tempIndex; j++) {
+              usedIndices.add(j); // Mark indices as used
+            }
             i = tempIndex;
             matchFound = true;
             break;
           }
         }
 
-        // If no match was found, just push the current word as plain text
         if (!matchFound) {
           elements.push(<span key={i}>{words[i]}</span>);
-          i += 1; // Move to the next word
+          usedIndices.add(i); // Mark index as used for non-matches too
+          i += 1;
         }
       }
-
-      // SECOND PASS: Try to find minimal common matches for unmatched terms
+      updatedElements = elements;
+      // SECOND PASS: Minimal common match for remaining unmatched terms
       for (const [matchKey, data] of sortedTerms) {
         if (unmatchedTerms.has(matchKey)) {
           const matchWordsSet = new Set(
             matchKey.split(" ").map((w) => w.trim())
           );
+
           for (let i = 0; i < words.length; i++) {
+            if (usedIndices.has(i)) continue; // Skip indices already used
+
             const minimalMatch = findMinimalCommonSlice(
               words,
               i,
@@ -260,34 +259,55 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
             if (minimalMatch) {
               const matchedText = minimalMatch.slice.join("");
-
-              // Create the button element for the minimal match
-              elements.push(
+              // Create the new element
+              const newElement = (
                 <TermDataDialog
-                  key={i}
+                  key={minimalMatch.startIndex} // Use startIndex as the key for uniqueness
                   term_text={matchedText}
                   data={data as Term[]}
-                  onCheck={(isChecked: boolean) =>
-                    handleTermValidation(matchKey, isChecked)
-                  }
+                  onCheck={(isChecked: boolean) => handleTermValidation(matchKey, isChecked)}
                 />
               );
+              // Slice the elements array to keep items before startIndex
+              const beforeSlice = elements.slice(0, minimalMatch.startIndex);
 
-              i = minimalMatch.endIndex + 1; // Skip to the end of the matched slice
-              break; // Only one minimal match needed
+              // Slice the elements array to keep items after endIndex
+              const afterSlice = elements.slice(minimalMatch.endIndex + 1);
+
+              // Concatenate everything to build the final array
+              updatedElements = [...beforeSlice, newElement, ...afterSlice];
+              // Insert button at the correct index in elements array
+              // elements.push(
+              //   <TermDataDialog
+              //     key={i}
+              //     term_text={matchedText}
+              //     data={data as Term[]}
+              //     onCheck={(isChecked: boolean) =>
+              //       handleTermValidation(matchKey, isChecked)
+              //     }
+              //   />
+              // );
+              console.log(updatedElements);
+
+              for (let j = i; j <= minimalMatch.endIndex; j++) {
+                usedIndices.add(j); // Mark indices as used for the matched slice
+              }
+
+              i = minimalMatch.endIndex + 1;
+              break;
             }
           }
         }
       }
-
-      // Return the updated text with buttons and plain text
-      return <p>{elements}</p>;
+      console.log(updatedElements);
+      return <p>{updatedElements}</p>;
     }
+
 
     const onProcessTextClicked = async () => {
       setIsLoading(true);
       setTrigger(true);
-      console.log(userInputText.replace(/[^a-zA-Z0-9\s\-]/g, ""));
+
       try {
         const response = await fetch("/api/py/match_terms", {
           // Use Next.js API route
@@ -309,7 +329,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         if (matchedJson === matchTerms) {
           setTrigger(!trigger);
         }
-        setMatchTerms(matchedJson); // Set matchTerms as an object of terms to lists
+        setMatchTerms(filterMatchedTerms(matchedJson)); // Set matchTerms as an object of terms to lists
+
         console.log("Response from /api/match_terms:", matchedJson);
       } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
@@ -373,7 +394,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             <FinishedDemo
               isEverythingChecked={isEverythingChecked}
               onClick={() => {
-                setShowAlert(true);
+                console.log("KEKE");
               }}
             />
           </div>
