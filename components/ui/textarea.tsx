@@ -26,6 +26,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const [_, setShowAlert] = useState<boolean>(false);
     const [trigger, setTrigger] = useState<boolean>(false); // Trigger state to force updates
 
+    const [sqlText, setSqlText] = useState<string>("");
+    const [isSQLAnswered, setIsSQLAnswered] = useState<boolean>(false);
+
     useEffect(() => {
       if (trigger) {
         if (Object.keys(matchTerms).length > 0) {
@@ -154,15 +157,17 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               shortestEndIndex = j;
               shortestStartIndex = i;
             }
-            console.log(i);
-            console.log(j);
             break; // Continue to find shorter matches starting at different points
           }
         }
       }
 
       if (shortestSlice) {
-        return { slice: shortestSlice, endIndex: shortestEndIndex, startIndex: shortestStartIndex };
+        return {
+          slice: shortestSlice,
+          endIndex: shortestEndIndex,
+          startIndex: shortestStartIndex,
+        };
       }
 
       return null; // No valid match found
@@ -177,7 +182,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
       const elements: React.ReactNode[] = [];
       let updatedElements: React.ReactNode[] = [];
-      const words = text.split(/(\s+)/); // Split text including spaces, preserving them
+      const words = text.toLowerCase().split(/(\s+)/); // Split text including spaces, preserving them
       const unmatchedTerms: Set<string> = new Set(
         sortedTerms.map(([term]) => term)
       );
@@ -197,6 +202,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           const matchWordsSet = new Set(
             matchKey.split(" ").map((w) => w.trim())
           );
+          console.log(matchWordsSet);
 
           let sliceToMatch: string[] = [];
           let tempIndex = i;
@@ -209,10 +215,16 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             }
             tempIndex++;
           }
+          console.log(sliceToMatch);
 
           if (subsetWordsMatch(sliceToMatch, matchWordsSet)) {
             const matchedText = words.slice(i, tempIndex).join("");
+            // we need to add validated to each term
 
+            for (const term of data) {
+              term.validated = true;
+            }
+            console.log(data);
             elements.push(
               <TermDataDialog
                 key={i}
@@ -259,13 +271,21 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
             if (minimalMatch) {
               const matchedText = minimalMatch.slice.join("");
+              // we need to add validated to each term
+              for (const term of data) {
+                term.validated = true;
+              }
+              console.log(data);
+
               // Create the new element
               const newElement = (
                 <TermDataDialog
                   key={minimalMatch.startIndex} // Use startIndex as the key for uniqueness
                   term_text={matchedText}
                   data={data as Term[]}
-                  onCheck={(isChecked: boolean) => handleTermValidation(matchKey, isChecked)}
+                  onCheck={(isChecked: boolean) =>
+                    handleTermValidation(matchKey, isChecked)
+                  }
                 />
               );
               // Slice the elements array to keep items before startIndex
@@ -287,7 +307,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               //     }
               //   />
               // );
-              console.log(updatedElements);
 
               for (let j = i; j <= minimalMatch.endIndex; j++) {
                 usedIndices.add(j); // Mark indices as used for the matched slice
@@ -300,9 +319,37 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         }
       }
       console.log(updatedElements);
-      return <p>{updatedElements}</p>;
+      return <div>{updatedElements}</div>;
     }
 
+    async function fetchQueryToSql(
+      query: string,
+      api_key: string
+    ): Promise<any> {
+      const url = new URL("http://localhost:8081/api/query_to_sql");
+      url.searchParams.append("query", query);
+      url.searchParams.append("api_key", api_key);
+
+      try {
+        const response = await fetch(url.toString(), {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+      }
+    }
 
     const onProcessTextClicked = async () => {
       setIsLoading(true);
@@ -336,6 +383,48 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         console.error("There was a problem with the fetch operation:", error);
       }
     };
+
+    async function queryDB(query: string, api_key: string): Promise<any> {
+      const url = new URL("http://localhost:8081/api/perform_query");
+      url.searchParams.append("query", query);
+      url.searchParams.append("api_key", api_key);
+
+      try {
+        const response = await fetch(url.toString(), {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        throw error;
+      }
+    }
+
+    function emulateApiRequest(
+      query: string,
+      api_key: string
+    ): Promise<{ data: string }> {
+      return new Promise((resolve) => {
+        console.log(
+          `Emulating API request with query: "${query}" and api_key: "${api_key}"`
+        );
+
+        setTimeout(() => {
+          const randomString = Math.random().toString(36).substring(2, 15);
+          resolve({ data: randomString });
+        }, 2000); // 2-second delay
+      });
+    }
 
     return (
       <div className="grid w-1/2 items-center gap-4 pb-20">
@@ -393,8 +482,50 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             </Button>
             <FinishedDemo
               isEverythingChecked={isEverythingChecked}
+              isSQLText={isSQLAnswered}
+              sqlText={sqlText}
+              onCloseClick={() => {
+                setIsSQLAnswered(false);
+                setSqlText("");
+              }}
               onClick={() => {
-                console.log("KEKE");
+                let sqlText: string = "";
+                for (const word_data of richInputText.props.children.values()) {
+                  if ("children" in word_data.props) {
+                    sqlText += word_data.props.children;
+                  }
+                  if ("data" in word_data.props) {
+                    sqlText += word_data.props.data[0].variable_name + "=";
+                    for (const term_data of word_data.props.data.values()) {
+                      if (term_data.validated) sqlText += term_data.code + ",";
+                    }
+                    sqlText = sqlText.slice(0, -1); // remove last comma
+                  }
+                }
+                console.log(sqlText);
+
+                // now let's ask for data
+                fetchQueryToSql(sqlText, process.env.NEXT_PUBLIC_API_KEY)
+                  .then((response) => {
+                    console.log("Response:", response);
+                    setSqlText(response);
+                    setIsSQLAnswered(true);
+
+                    queryDB(response, process.env.NEXT_PUBLIC_API_KEY)
+                      .then((db_response) => {
+                        console.log("DB result:", db_response);
+                      })
+                      .catch((error) => console.error("Error:", error));
+                  })
+                  .catch((error) => console.error("Error:", error));
+                // emulateApiRequest("SELECT * FROM patients", process.env.API_KEY)
+                //   .then((response) => {
+                //     console.log("Mock response:", response);
+                //     setSqlText(response.data);
+                //     setIsSQLAnswered(true);
+                //   })
+                //   .catch((error) => console.error("Error:", error));
+                // console.log(llmSQL);
               }}
             />
           </div>
