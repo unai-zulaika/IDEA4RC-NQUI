@@ -4282,5 +4282,11 @@
     "term": "Adenocarcinoma in situ in villous adenoma of lower-inner quadrant of breast",
     "entity": "Diagnosis",
     "code": 36560982
+  },
+  "lumpectomy": {
+    "variable_name": "Procedure",
+    "term": "Lumpectomy of breast",
+    "entity": "Procedure",
+    "code": 4213045
   }
 }
