@@ -76,7 +76,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     function filterMatchedTerms(matchedTerms: any, original_text: string): any {
       const termEntries = Object.entries(matchedTerms);
       const termsToKeep: any = {};
-      const wordsC = original_text.toLowerCase().split(" ").map((w) => w.trim());
+      const wordsC = original_text
+        .toLowerCase()
+        .split(" ")
+        .map((w) => w.trim());
 
       // Compare each term with every other term
       for (let i = 0; i < termEntries.length; i++) {
@@ -84,7 +87,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         const wordsA = new Set(termA.split(" ").map((w) => w.trim()));
 
         let shouldKeepA = true;
-        let shouldKeepByUnique = false
+        let shouldKeepByUnique = false;
 
         for (let j = 0; j < termEntries.length; j++) {
           if (i === j) continue; // Skip comparing the same term
@@ -92,13 +95,19 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           const [termB, dataB] = termEntries[j];
           const wordsB = new Set(termB.split(" ").map((w) => w.trim()));
 
-          const hasUniqueInAandInC = [...wordsA].some((word) => !wordsB.has(word) && wordsC.includes(word));
+          const hasUniqueInAandInC = [...wordsA].some(
+            (word) => !wordsB.has(word) && wordsC.includes(word)
+          );
 
           // Check if both terms share words
           const commonWords = [...wordsA].filter((word) => wordsB.has(word));
 
           // If they share words and termA has fewer words than termB, skip termA
-          if (commonWords.length > 0 && wordsA.size < wordsB.size && !hasUniqueInAandInC) {
+          if (
+            commonWords.length > 0 &&
+            wordsA.size < wordsB.size &&
+            !hasUniqueInAandInC
+          ) {
             shouldKeepA = false;
 
             for (const term of dataA as Term[]) {
@@ -120,7 +129,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         //   termsToKeep[termA] = [...dataA];
         // }
       }
-
 
       return termsToKeep;
     }
@@ -194,7 +202,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       text: string,
       matchedTerms: any
     ): React.ReactNode {
-      const filteredMatchedTerms = filterMatchedTerms(matchedTerms, userInputText.replace(/[^a-zA-Z0-9\s\-]/g, ""));
+      const filteredMatchedTerms = filterMatchedTerms(
+        matchedTerms,
+        userInputText.replace(/[^a-zA-Z0-9\s\-]/g, "")
+      );
       // const filteredMatchedTerms = matchedTerms
       const sortedTerms = Object.entries(filteredMatchedTerms);
 
@@ -320,7 +331,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       query: string,
       api_key: string
     ): Promise<any> {
-      const url = new URL("http://valhalla.deusto.es:8082/api/query_to_sql");
+      const url = new URL(
+        "https://valhalla.deusto.es/idea4rc/api/query_to_sql"
+      );
       url.searchParams.append("query", query);
       url.searchParams.append("api_key", api_key);
 
@@ -379,7 +392,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     async function queryDB(query: string, api_key: string): Promise<any> {
-      const url = new URL("http://valhalla.deusto.es:8082/api/perform_query");
+      const url = new URL(
+        "https://valhalla.deusto.es/idea4rc/api/perform_query"
+      );
       url.searchParams.append("query", query);
       url.searchParams.append("api_key", api_key);
 
@@ -484,7 +499,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               }}
               onClick={() => {
                 let sqlText: string = "";
-                if (React.isValidElement(richInputText) && richInputText.props && richInputText.props.children) {
+                if (
+                  React.isValidElement(richInputText) &&
+                  richInputText.props &&
+                  richInputText.props.children
+                ) {
                   for (const word_data of richInputText.props.children.values()) {
                     if ("children" in word_data.props) {
                       sqlText += word_data.props.children;
@@ -492,7 +511,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                     if ("data" in word_data.props) {
                       sqlText += word_data.props.data[0].variable_name + "=";
                       for (const term_data of word_data.props.data.values()) {
-                        if (term_data.validated) sqlText += term_data.code + ",";
+                        if (term_data.validated)
+                          sqlText += term_data.code + ",";
                       }
                       sqlText = sqlText.slice(0, -1); // remove last comma
                     }
