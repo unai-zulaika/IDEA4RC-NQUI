@@ -59,7 +59,7 @@ export const columns: ColumnDef<Term>[] = [
     ),
     cell: ({ row }) => (
       <Checkbox
-        checked={row.getIsSelected()}
+        checked={row.original.validated}
         onCheckedChange={(value) => {
           row.toggleSelected(!!value);
           row.original.validated = !!value;
@@ -183,9 +183,9 @@ export function TermData({ data }: DataTableProps) {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                     </TableHead>
                   );
                 })}
