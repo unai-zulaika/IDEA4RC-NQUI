@@ -73,7 +73,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     // Utility function to preprocess matchedTerms and remove shorter terms if they share common words
-    function filterMatchedTerms(matchedTerms: any, original_text: str): any {
+    function filterMatchedTerms(matchedTerms: any, original_text: string): any {
       const termEntries = Object.entries(matchedTerms);
       const termsToKeep: any = {};
       const wordsC = original_text.toLowerCase().split(" ").map((w) => w.trim());
@@ -101,17 +101,17 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           if (commonWords.length > 0 && wordsA.size < wordsB.size && !hasUniqueInAandInC) {
             shouldKeepA = false;
 
-            for (const term of dataA) {
+            for (const term of dataA as Term[]) {
               term.validated = false; // Mark term as not validated
             }
-            dataB.push(...dataA); // Merge data from termA into termB
+            (dataB as Term[]).push(...(dataA as Term[])); // Merge data from termA into termB
             break; // No need to check further if termA is already disqualified
           }
         }
 
         // If termA is not disqualified, keep it
         if (shouldKeepA) {
-          for (const term of dataA) {
+          for (const term of dataA as Term[]) {
             if (term.validated === undefined) term.validated = true;
           }
           termsToKeep[termA] = dataA;
@@ -484,28 +484,30 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
               }}
               onClick={() => {
                 let sqlText: string = "";
-                for (const word_data of richInputText.props.children.values()) {
-                  if ("children" in word_data.props) {
-                    sqlText += word_data.props.children;
-                  }
-                  if ("data" in word_data.props) {
-                    sqlText += word_data.props.data[0].variable_name + "=";
-                    for (const term_data of word_data.props.data.values()) {
-                      if (term_data.validated) sqlText += term_data.code + ",";
+                if (React.isValidElement(richInputText) && richInputText.props && richInputText.props.children) {
+                  for (const word_data of richInputText.props.children.values()) {
+                    if ("children" in word_data.props) {
+                      sqlText += word_data.props.children;
                     }
-                    sqlText = sqlText.slice(0, -1); // remove last comma
+                    if ("data" in word_data.props) {
+                      sqlText += word_data.props.data[0].variable_name + "=";
+                      for (const term_data of word_data.props.data.values()) {
+                        if (term_data.validated) sqlText += term_data.code + ",";
+                      }
+                      sqlText = sqlText.slice(0, -1); // remove last comma
+                    }
                   }
                 }
                 console.log(sqlText);
 
                 // now let's ask for data
-                fetchQueryToSql(sqlText, process.env.NEXT_PUBLIC_API_KEY)
+                fetchQueryToSql(sqlText, process.env.NEXT_PUBLIC_API_KEY || "")
                   .then((response) => {
                     console.log("Response:", response);
                     setSqlText(response);
                     setIsSQLAnswered(true);
 
-                    queryDB(response, process.env.NEXT_PUBLIC_API_KEY)
+                    queryDB(response, process.env.NEXT_PUBLIC_API_KEY || "")
                       .then((db_response) => {
                         console.log("DB result:", db_response);
                         let patient_ids = [];
