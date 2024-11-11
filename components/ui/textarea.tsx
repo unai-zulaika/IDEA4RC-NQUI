@@ -28,6 +28,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
     const [sqlText, setSqlText] = useState<string>("");
     const [isSQLAnswered, setIsSQLAnswered] = useState<boolean>(false);
+    const [dbOutput, setDbOutput] = useState<string[]>([]);
 
     useEffect(() => {
       if (trigger) {
@@ -72,9 +73,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     // Utility function to preprocess matchedTerms and remove shorter terms if they share common words
-    function filterMatchedTerms(matchedTerms: any): any {
+    function filterMatchedTerms(matchedTerms: any, original_text: str): any {
       const termEntries = Object.entries(matchedTerms);
       const termsToKeep: any = {};
+      const wordsC = original_text.toLowerCase().split(" ").map((w) => w.trim());
 
       // Compare each term with every other term
       for (let i = 0; i < termEntries.length; i++) {
@@ -82,28 +84,43 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         const wordsA = new Set(termA.split(" ").map((w) => w.trim()));
 
         let shouldKeepA = true;
+        let shouldKeepByUnique = false
 
         for (let j = 0; j < termEntries.length; j++) {
           if (i === j) continue; // Skip comparing the same term
 
-          const [termB] = termEntries[j];
+          const [termB, dataB] = termEntries[j];
           const wordsB = new Set(termB.split(" ").map((w) => w.trim()));
+
+          const hasUniqueInAandInC = [...wordsA].some((word) => !wordsB.has(word) && wordsC.includes(word));
 
           // Check if both terms share words
           const commonWords = [...wordsA].filter((word) => wordsB.has(word));
 
           // If they share words and termA has fewer words than termB, skip termA
-          if (commonWords.length > 0 && wordsA.size < wordsB.size) {
+          if (commonWords.length > 0 && wordsA.size < wordsB.size && !hasUniqueInAandInC) {
             shouldKeepA = false;
+
+            for (const term of dataA) {
+              term.validated = false; // Mark term as not validated
+            }
+            dataB.push(...dataA); // Merge data from termA into termB
             break; // No need to check further if termA is already disqualified
           }
         }
 
         // If termA is not disqualified, keep it
         if (shouldKeepA) {
+          for (const term of dataA) {
+            if (term.validated === undefined) term.validated = true;
+          }
           termsToKeep[termA] = dataA;
         }
+        // if (shouldKeepByUnique) {
+        //   termsToKeep[termA] = [...dataA];
+        // }
       }
+
 
       return termsToKeep;
     }
@@ -177,7 +194,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       text: string,
       matchedTerms: any
     ): React.ReactNode {
-      const filteredMatchedTerms = filterMatchedTerms(matchedTerms);
+      const filteredMatchedTerms = filterMatchedTerms(matchedTerms, userInputText.replace(/[^a-zA-Z0-9\s\-]/g, ""));
+      // const filteredMatchedTerms = matchedTerms
       const sortedTerms = Object.entries(filteredMatchedTerms);
 
       const elements: React.ReactNode[] = [];
@@ -202,7 +220,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           const matchWordsSet = new Set(
             matchKey.split(" ").map((w) => w.trim())
           );
-          console.log(matchWordsSet);
 
           let sliceToMatch: string[] = [];
           let tempIndex = i;
@@ -215,16 +232,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             }
             tempIndex++;
           }
-          console.log(sliceToMatch);
 
           if (subsetWordsMatch(sliceToMatch, matchWordsSet)) {
             const matchedText = words.slice(i, tempIndex).join("");
             // we need to add validated to each term
-
-            for (const term of data) {
-              term.validated = true;
-            }
-            console.log(data);
             elements.push(
               <TermDataDialog
                 key={i}
@@ -272,10 +283,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             if (minimalMatch) {
               const matchedText = minimalMatch.slice.join("");
               // we need to add validated to each term
-              for (const term of data) {
-                term.validated = true;
-              }
-              console.log(data);
 
               // Create the new element
               const newElement = (
@@ -293,20 +300,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 
               // Slice the elements array to keep items after endIndex
               const afterSlice = elements.slice(minimalMatch.endIndex + 1);
-
               // Concatenate everything to build the final array
               updatedElements = [...beforeSlice, newElement, ...afterSlice];
-              // Insert button at the correct index in elements array
-              // elements.push(
-              //   <TermDataDialog
-              //     key={i}
-              //     term_text={matchedText}
-              //     data={data as Term[]}
-              //     onCheck={(isChecked: boolean) =>
-              //       handleTermValidation(matchKey, isChecked)
-              //     }
-              //   />
-              // );
 
               for (let j = i; j <= minimalMatch.endIndex; j++) {
                 usedIndices.add(j); // Mark indices as used for the matched slice
@@ -318,7 +313,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           }
         }
       }
-      console.log(updatedElements);
       return <div>{updatedElements}</div>;
     }
 
@@ -326,7 +320,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       query: string,
       api_key: string
     ): Promise<any> {
-      const url = new URL("http://localhost:8081/api/query_to_sql");
+      const url = new URL("http://valhalla.deusto.es:8082/api/query_to_sql");
       url.searchParams.append("query", query);
       url.searchParams.append("api_key", api_key);
 
@@ -354,7 +348,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const onProcessTextClicked = async () => {
       setIsLoading(true);
       setTrigger(true);
-
+      const original_text = userInputText.replace(/[^a-zA-Z0-9\s\-]/g, "");
       try {
         const response = await fetch("/api/py/match_terms", {
           // Use Next.js API route
@@ -363,7 +357,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            text_to_match: userInputText.replace(/[^a-zA-Z0-9\s\-]/g, ""),
+            text_to_match: original_text,
             threshold: 42,
           }),
         });
@@ -376,7 +370,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         if (matchedJson === matchTerms) {
           setTrigger(!trigger);
         }
-        setMatchTerms(filterMatchedTerms(matchedJson)); // Set matchTerms as an object of terms to lists
+        setMatchTerms(filterMatchedTerms(matchedJson, original_text)); // Set matchTerms as an object of terms to lists
 
         console.log("Response from /api/match_terms:", matchedJson);
       } catch (error) {
@@ -385,7 +379,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     async function queryDB(query: string, api_key: string): Promise<any> {
-      const url = new URL("http://localhost:8081/api/perform_query");
+      const url = new URL("http://valhalla.deusto.es:8082/api/perform_query");
       url.searchParams.append("query", query);
       url.searchParams.append("api_key", api_key);
 
@@ -514,18 +508,18 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                     queryDB(response, process.env.NEXT_PUBLIC_API_KEY)
                       .then((db_response) => {
                         console.log("DB result:", db_response);
+                        let patient_ids = [];
+                        if (db_response.result !== undefined) {
+                          for (const row of db_response.result) {
+                            patient_ids.push(row[0]); // 0 is the patient id
+                          }
+                        }
+                        setDbOutput(patient_ids);
+                        alert("Patient IDs: " + patient_ids);
                       })
                       .catch((error) => console.error("Error:", error));
                   })
                   .catch((error) => console.error("Error:", error));
-                // emulateApiRequest("SELECT * FROM patients", process.env.API_KEY)
-                //   .then((response) => {
-                //     console.log("Mock response:", response);
-                //     setSqlText(response.data);
-                //     setIsSQLAnswered(true);
-                //   })
-                //   .catch((error) => console.error("Error:", error));
-                // console.log(llmSQL);
               }}
             />
           </div>
