@@ -19,7 +19,7 @@ export default function Home() {
         <div>
           <div className="space-y-2">
             <h4 className="text-xl font-medium leading-none">Examples</h4>
-            <Separator className="my-4" />
+            {/* <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
               Patient diagnosed with a angiomyxoma or carcinoma
             </p>
@@ -32,7 +32,7 @@ export default function Home() {
             <p className="text-sm text-muted-foreground">
               Patients with head and neck cancers with at least 1st progression
               and any treatment of first progression
-            </p>
+            </p>*/}
             <Separator className="my-4" />
             <p className="text-sm text-muted-foreground">
               Female patients diagnosed with a paget disease
