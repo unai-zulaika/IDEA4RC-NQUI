@@ -3,11 +3,22 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { FileType2, Loader2 } from "lucide-react";
+import { FileType2, Loader2, Copy } from "lucide-react";
 import { TermDataDialog } from "@/components/ui/TermDataDialog";
 import { Separator } from "./separator";
 import { FinishedDemo } from "./FinishedDemo";
 import { Term } from "./TermData";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
@@ -29,6 +40,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const [sqlText, setSqlText] = useState<string>("");
     const [isSQLAnswered, setIsSQLAnswered] = useState<boolean>(false);
     const [dbOutput, setDbOutput] = useState<string[]>([]);
+    const [showPatientDialog, setShowPatientDialog] = useState<boolean>(false);
+    const [patientIDs, setPatientIDs] = useState<string[]>([]);
 
     useEffect(() => {
       if (trigger) {
@@ -435,6 +448,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       });
     }
 
+    const handleCopy = () => {
+      const textToCopy = patientIDs.join(", ");
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        alert("Patient IDs copied to clipboard");
+      });
+    };
+
     return (
       <div className="grid w-1/2 items-center gap-4 pb-20">
         {isInputSent ? (
@@ -536,8 +556,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
                             patient_ids.push(row[0]); // 0 is the patient id
                           }
                         }
-                        setDbOutput(patient_ids);
-                        alert("Patient IDs: " + patient_ids);
+                        setPatientIDs(patient_ids);
+                        setShowPatientDialog(true);
                       })
                       .catch((error) => console.error("Error:", error));
                   })
@@ -550,6 +570,39 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             <FileType2 className="mr-2 h-4 w-4" /> Process text
           </Button>
         )}
+
+        <AlertDialog
+          open={showPatientDialog}
+          onOpenChange={setShowPatientDialog}
+        >
+          <AlertDialogTrigger asChild>
+            <Button className="hidden">Show Patient IDs</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent style={{ maxHeight: "80vh", overflowY: "auto" }}>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Patient IDs</AlertDialogTitle>
+              <AlertDialogDescription>
+                {patientIDs.length > 0 ? (
+                  <div>
+                    <ul>
+                      {patientIDs.map((id, index) => (
+                        <li key={index}>{id}</li>
+                      ))}
+                    </ul>
+                    <Button onClick={handleCopy} className="mt-4">
+                      <Copy className="mr-2 h-4 w-4" /> Copy Patient IDs
+                    </Button>
+                  </div>
+                ) : (
+                  <p>No patient IDs found.</p>
+                )}
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Close</AlertDialogCancel>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     );
   }

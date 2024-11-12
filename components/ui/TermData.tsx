@@ -61,8 +61,8 @@ export const columns: ColumnDef<Term>[] = [
       <Checkbox
         checked={row.original.validated}
         onCheckedChange={(value) => {
-          row.toggleSelected(!!value);
           row.original.validated = !!value;
+          row.toggleSelected(!!value);
         }}
         aria-label="Select row"
       />
@@ -107,8 +107,8 @@ export function TermData({ data }: DataTableProps) {
   // Initialize rowSelection with all rows selected
   const initialRowSelection = React.useMemo(() => {
     const rowSelectionState: { [key: string]: boolean } = {};
-    data.forEach((_, index) => {
-      rowSelectionState[index] = true; // Preselect all rows
+    data.forEach((termData, index) => {
+      rowSelectionState[index] = termData.validated!!; // Preselect all rows
     });
     return rowSelectionState;
   }, [data]);
@@ -131,6 +131,11 @@ export function TermData({ data }: DataTableProps) {
       columnFilters,
       columnVisibility,
       rowSelection,
+    },
+    initialState: {
+      pagination: {
+        pageSize: 10, // Set the page size to 4 rows per page
+      },
     },
   });
 
@@ -172,7 +177,10 @@ export function TermData({ data }: DataTableProps) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border">
+      <div
+        className="rounded-md border"
+        style={{ maxHeight: "52vh", overflowY: "auto" }}
+      >
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -183,9 +191,9 @@ export function TermData({ data }: DataTableProps) {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
                     </TableHead>
                   );
                 })}
@@ -224,10 +232,14 @@ export function TermData({ data }: DataTableProps) {
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          {
+            table
+              .getFilteredSelectedRowModel()
+              .rows.filter((row) => row.original.validated).length
+          }{" "}
+          of {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
-        <div className="space-x-2">
+        <div className="space-x-2 flex items-center">
           <Button
             variant="outline"
             size="sm"
@@ -236,6 +248,10 @@ export function TermData({ data }: DataTableProps) {
           >
             Previous
           </Button>
+          <span>
+            Page {table.getState().pagination.pageIndex + 1} of{" "}
+            {table.getPageCount()}
+          </span>
           <Button
             variant="outline"
             size="sm"
